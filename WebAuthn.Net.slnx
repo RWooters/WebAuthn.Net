@@ -1,0 +1,34 @@
+<Solution>
+  <Folder Name="/root/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="global.json" />
+    <File Path="NOTICE.md" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/root/.config/">
+    <File Path=".config/dotnet-tools.json" />
+  </Folder>
+  <Folder Name="/root/.github/" />
+  <Folder Name="/root/.github/workflows/">
+    <File Path=".github/workflows/CI.yml" />
+    <File Path=".github/workflows/Release.yml" />
+  </Folder>
+  <Folder Name="/root/demo/">
+    <Project Path="demo/WebAuthn.Net.Demo.FidoConformance/WebAuthn.Net.Demo.FidoConformance.csproj" />
+    <Project Path="demo/WebAuthn.Net.Demo.Mvc/WebAuthn.Net.Demo.Mvc.csproj" />
+  </Folder>
+  <Folder Name="/root/src/">
+    <Project Path="src/WebAuthn.Net.OpenTelemetry/WebAuthn.Net.OpenTelemetry.csproj" />
+    <Project Path="src/WebAuthn.Net.Storage.InMemory/WebAuthn.Net.Storage.InMemory.csproj" />
+    <Project Path="src/WebAuthn.Net.Storage.MySql/WebAuthn.Net.Storage.MySql.csproj" />
+    <Project Path="src/WebAuthn.Net.Storage.PostgreSql/WebAuthn.Net.Storage.PostgreSql.csproj" />
+    <Project Path="src/WebAuthn.Net.Storage.SqlServer/WebAuthn.Net.Storage.SqlServer.csproj" />
+    <Project Path="src/WebAuthn.Net/WebAuthn.Net.csproj" />
+  </Folder>
+  <Folder Name="/root/tests/">
+    <Project Path="tests/WebAuthn.Net.Tests.Unit/WebAuthn.Net.Tests.Unit.csproj" />
+  </Folder>
+</Solution>
