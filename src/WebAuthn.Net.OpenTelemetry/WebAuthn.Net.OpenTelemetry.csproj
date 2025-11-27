@@ -25,12 +25,8 @@
         <ProjectReference Include="..\WebAuthn.Net\WebAuthn.Net.csproj" />
     </ItemGroup>
 
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-      <PackageReference Include="OpenTelemetry" Version="1.6.0" />
-    </ItemGroup>
-
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-      <PackageReference Include="OpenTelemetry" Version="1.7.0" />
+    <ItemGroup>
+      <PackageReference Include="OpenTelemetry" Version="1.14.0" />
     </ItemGroup>
 
 </Project>

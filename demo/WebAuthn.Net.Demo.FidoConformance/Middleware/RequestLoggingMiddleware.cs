@@ -38,7 +38,19 @@ public class RequestLoggingMiddleware : IMiddleware
         var json = Encoding.UTF8.GetString(ms.ToArray());
         var element = JsonSerializer.Deserialize<JsonElement>(json);
         var intendedJson = JsonSerializer.Serialize(element, _jsonSerializerOptions);
-        _logger.LogInformation($"Request {context.Request.Method} {context.Request.GetEncodedPathAndQuery()}{Environment.NewLine}Body:{Environment.NewLine}{intendedJson}");
+        _logger.LogRequestInformation(context.Request.Method, context.Request.GetEncodedPathAndQuery(), intendedJson);
         await next(context);
     }
+}
+
+internal static partial class RequestLoggingMiddlewareLoggingExtensions
+{
+    [LoggerMessage(
+        Level = LogLevel.Information,
+        Message = "Request {Method} {PathAndQuery}\nBody:\n{Body}")]
+    public static partial void LogRequestInformation(
+        this ILogger logger,
+        string method,
+        string pathAndQuery,
+        string body);
 }
