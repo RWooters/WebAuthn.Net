@@ -13,7 +13,7 @@ public interface IWebAuthnContext : IAsyncDisposable
     /// <summary>
     ///     The context of the HTTP request in which the WebAuthn operation is being processed.
     /// </summary>
-    public HttpContext HttpContext { get; }
+    HttpContext HttpContext { get; }
 
     /// <summary>
     ///     Save the changes made in this context.

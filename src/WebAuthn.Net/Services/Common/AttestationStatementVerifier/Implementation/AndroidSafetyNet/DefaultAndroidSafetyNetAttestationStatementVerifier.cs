@@ -170,7 +170,7 @@ public class DefaultAndroidSafetyNetAttestationStatementVerifier<TContext>
             }
 
             // 4) Verify that the SafetyNet response actually came from the SafetyNet service by following the steps in the SafetyNet online documentation.
-            if (ctsProfileMatch.Value != true)
+            if (!ctsProfileMatch.Value)
             {
                 return Result<VerifiedAttestationStatement>.Fail();
             }

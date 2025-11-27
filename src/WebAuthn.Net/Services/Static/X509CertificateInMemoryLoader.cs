@@ -23,7 +23,7 @@ public static class X509CertificateInMemoryLoader
         X509Certificate2? cert = null;
         try
         {
-            cert = X509CertificateLoader.LoadPkcs12(bytes, password, keyStorageFlags, new Pkcs12LoaderLimits(Pkcs12LoaderLimits.Defaults)
+            cert = X509CertificateLoader.LoadPkcs12(bytes, password, keyStorageFlags, new(Pkcs12LoaderLimits.Defaults)
             {
                 MacIterationLimit = 1_000_000,
                 IndividualKdfIterationLimit = 1_000_000,
@@ -33,7 +33,7 @@ public static class X509CertificateInMemoryLoader
                 PreserveStorageProvider = true,
                 PreserveKeyName = true,
                 PreserveCertificateAlias = true,
-                PreserveUnknownAttributes = true,
+                PreserveUnknownAttributes = true
             });
             if (cert.GetRSAPublicKey() is { } rsaPublicKey)
             {

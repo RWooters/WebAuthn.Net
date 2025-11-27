@@ -10,5 +10,5 @@ public interface IChallengeGenerator
     /// </summary>
     /// <param name="size">Challenge size.</param>
     /// <returns>Challenge for WebAuthn ceremony.</returns>
-    public byte[] GenerateChallenge(int size);
+    byte[] GenerateChallenge(int size);
 }

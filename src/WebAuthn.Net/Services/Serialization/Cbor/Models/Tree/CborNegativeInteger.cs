@@ -23,7 +23,7 @@ public class CborNegativeInteger : AbstractCborInteger, IEquatable<CborNegativeI
             throw new ArgumentOutOfRangeException(nameof(value));
         }
 #else
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(value, 0, nameof(value));
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(value, 0);
 #endif
         RawValue = (ulong) (-1 - value);
     }

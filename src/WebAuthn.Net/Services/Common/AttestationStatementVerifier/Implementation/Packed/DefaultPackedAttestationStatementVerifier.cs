@@ -544,7 +544,7 @@ public class DefaultPackedAttestationStatementVerifier<TContext> :
         if (extension is X509BasicConstraintsExtension basicExtension)
         {
             var isCaCert = basicExtension.CertificateAuthority;
-            var isCaComponentFalse = isCaCert == false;
+            var isCaComponentFalse = !isCaCert;
             return isCaComponentFalse;
         }
 
