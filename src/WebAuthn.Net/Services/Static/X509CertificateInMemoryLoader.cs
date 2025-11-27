@@ -17,24 +17,10 @@ public static class X509CertificateInMemoryLoader
     [SuppressMessage("Design", "CA1031:Do not catch general exception types")]
     public static bool TryLoad(byte[] bytes, [NotNullWhen(true)] out X509Certificate2? certificate)
     {
-        const X509KeyStorageFlags keyStorageFlags = X509KeyStorageFlags.EphemeralKeySet;
-        const string? password = null;
-
         X509Certificate2? cert = null;
         try
         {
-            cert = X509CertificateLoader.LoadPkcs12(bytes, password, keyStorageFlags, new(Pkcs12LoaderLimits.Defaults)
-            {
-                MacIterationLimit = 1_000_000,
-                IndividualKdfIterationLimit = 1_000_000,
-                TotalKdfIterationLimit = 10_000_000,
-                MaxKeys = 200,
-                MaxCertificates = 200,
-                PreserveStorageProvider = true,
-                PreserveKeyName = true,
-                PreserveCertificateAlias = true,
-                PreserveUnknownAttributes = true
-            });
+            cert = X509CertificateLoader.LoadCertificate(bytes);
             if (cert.GetRSAPublicKey() is { } rsaPublicKey)
             {
                 rsaPublicKey.Dispose();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -9,7 +10,7 @@ namespace WebAuthn.Net.DSL;
 public static class EmbeddedResourceProvider
 {
     private static readonly Assembly SelfAssembly = typeof(EmbeddedResourceProvider).Assembly;
-    private static readonly string[] ResourceNames = SelfAssembly.GetManifestResourceNames();
+    private static readonly HashSet<string> ResourceNames = SelfAssembly.GetManifestResourceNames().ToHashSet();
 
     public static string GetString(string resourceName)
     {

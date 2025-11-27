@@ -117,7 +117,7 @@ public class DefaultAttestationTrustPathValidator : IAttestationTrustPathValidat
                 return false;
             }
 
-            var subjectAndIssuerSame = certificate.SubjectName.RawData.SequenceEqual(certificate.IssuerName.RawData);
+            var subjectAndIssuerSame = certificate.SubjectName.RawData.AsSpan().SequenceEqual(certificate.IssuerName.RawData);
 
             var authorityKeyIdentifierExt = certificate.Extensions.FirstOrDefault(x => x.Oid?.Value == authorityKeyIdentifier);
             var subjectKeyIdentifierExt = certificate.Extensions.FirstOrDefault(x => x.Oid?.Value == subjectKeyIdentifier);

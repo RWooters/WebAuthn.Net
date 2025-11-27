@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using WebAuthn.Net.Services.Serialization.Cbor.Models.Enums;
 using WebAuthn.Net.Services.Serialization.Cbor.Models.Tree.Abstractions;
 
@@ -43,7 +42,7 @@ public class CborByteString : AbstractCborObject, IEquatable<CborByteString>, IE
     /// <inheritdoc />
     public bool Equals(CborByteString? other)
     {
-        return other is not null && (ReferenceEquals(this, other) || RawValue.SequenceEqual(other.RawValue));
+        return other is not null && (ReferenceEquals(this, other) || RawValue.AsSpan().SequenceEqual(other.RawValue));
     }
 
     /// <inheritdoc />
