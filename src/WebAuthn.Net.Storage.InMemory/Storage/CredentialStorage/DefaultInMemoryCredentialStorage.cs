@@ -25,7 +25,7 @@ public class DefaultInMemoryCredentialStorage<TContext> : ICredentialStorage<TCo
     /// <summary>
     ///     Credentials stored in memory.
     /// </summary>
-    protected readonly List<InMemoryUserCredentialRecord> _credentials = new();
+    protected readonly ICollection<InMemoryUserCredentialRecord> _credentials = new List<InMemoryUserCredentialRecord>();
 
     /// <summary>
     ///     An object used for blocking access to credentials from different threads.
