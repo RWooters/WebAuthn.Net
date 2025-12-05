@@ -6,7 +6,7 @@ namespace WebAuthn.Net.Models.Protocol.Enums;
 ///     Attestation statement format identifier
 /// </summary>
 /// <remarks>
-///     <a href="https://www.iana.org/assignments/webauthn/webauthn.xhtml#webauthn-attestation-statement-format-ids">IANA "WebAuthn Attestation Statement Format Identifiers" registry</a>
+///     <a href="https://www.iana.org/assignments/webauthn/">IANA "WebAuthn Attestation Statement Format Identifiers" registry</a>
 /// </remarks>
 public enum AttestationStatementFormat
 {
@@ -23,7 +23,7 @@ public enum AttestationStatementFormat
     Tpm = 1,
 
     /// <summary>
-    ///     Platform authenticators on versions "N" (7.0), and later, may provide this proprietary "hardware attestation" statement.
+    ///     Platform authenticators on versions "N", and later, may provide this proprietary "hardware attestation" statement.
     /// </summary>
     [EnumMember(Value = "android-key")]
     AndroidKey = 2,
@@ -41,7 +41,7 @@ public enum AttestationStatementFormat
     FidoU2F = 4,
 
     /// <summary>
-    ///     Used with Apple devices' platform authenticators.
+    ///     Used with Apple devices' platform authenticators
     /// </summary>
     [EnumMember(Value = "apple")]
     AppleAnonymous = 5,
