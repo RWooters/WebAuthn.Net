@@ -23,7 +23,20 @@ public class PublicKeyCredentialCreationOptionsJSON
     ///     Constructs <see cref="PublicKeyCredentialCreationOptionsJSON" />.
     /// </summary>
     /// <param name="rp">This member contains a name and an identifier for the <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Party</a> responsible for the request.</param>
-    /// <param name="user">This member contains names and an identifier for the <a href="https://www.w3.org/TR/webauthn-3/#user-account">user account</a> performing the <a href="https://www.w3.org/TR/webauthn-3/#registration">registration</a>.</param>
+    /// <param name="user">
+    ///     <para>This member contains names and an identifier for the <a href="https://www.w3.org/TR/webauthn-3/#user-account">user account</a> performing the <a href="https://www.w3.org/TR/webauthn-3/#registration">registration</a>.</para>
+    ///     <para>
+    ///         Its value’s <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialentity-name">"name"</a>, <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-displayname">"displayName"</a> and
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-id">"id"</a> members are REQUIRED. <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-id">"id"</a> can be returned as the
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorassertionresponse-userhandle">userHandle</a> in some future <a href="https://www.w3.org/TR/webauthn-3/#authentication-ceremony">authentication ceremonies</a>, and is used to overwrite existing
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#discoverable-credential">discoverable credentials</a> that have the same <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialcreationoptions-rp">rp</a>.
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialrpentity-id">id</a> and <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialcreationoptions-user">user</a>.
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-id">id</a> on the same <a href="https://www.w3.org/TR/webauthn-3/#authenticator">authenticator</a>. <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialentity-name">"name"</a> and
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-displayname">"displayName"</a> MAY be used by the <a href="https://www.w3.org/TR/webauthn-3/#authenticator">authenticator</a> and <a href="https://www.w3.org/TR/webauthn-3/#client">client</a> in
+    ///         future <a href="https://www.w3.org/TR/webauthn-3/#authentication-ceremony">authentication ceremonies</a> to help the user select a <a href="https://www.w3.org/TR/credential-management-1/#concept-credential">credential</a>, but are not returned to the
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Party</a> as a result of future <a href="https://www.w3.org/TR/webauthn-3/#authentication-ceremony">authentication ceremonies</a>.
+    ///     </para>
+    /// </param>
     /// <param name="challenge">
     ///     This member specifies a challenge that the <a href="https://www.w3.org/TR/webauthn-3/#authenticator">authenticator</a> signs, along with other data, when producing an <a href="https://www.w3.org/TR/webauthn-3/#attestation-object">attestation object</a>
     ///     for the newly created credential. See the <a href="https://www.w3.org/TR/webauthn-3/#sctn-cryptographic-challenges">"Cryptographic Challenges"</a> security consideration.
@@ -107,8 +120,23 @@ public class PublicKeyCredentialCreationOptionsJSON
     public PublicKeyCredentialRpEntityJSON Rp { get; }
 
     /// <summary>
-    ///     This member contains names and an identifier for the <a href="https://www.w3.org/TR/webauthn-3/#user-account">user account</a> performing the <a href="https://www.w3.org/TR/webauthn-3/#registration">registration</a>.
+    ///     <para>This member contains names and an identifier for the <a href="https://www.w3.org/TR/webauthn-3/#user-account">user account</a> performing the <a href="https://www.w3.org/TR/webauthn-3/#registration">registration</a>.</para>
+    ///     <para>
+    ///         Its value’s <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialentity-name">"name"</a>, <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-displayname">"displayName"</a> and
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-id">"id"</a> members are REQUIRED. <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-id">"id"</a> can be returned as the
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorassertionresponse-userhandle">userHandle</a> in some future <a href="https://www.w3.org/TR/webauthn-3/#authentication-ceremony">authentication ceremonies</a>, and is used to overwrite existing
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#discoverable-credential">discoverable credentials</a> that have the same <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialcreationoptions-rp">rp</a>.
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialrpentity-id">id</a> and <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialcreationoptions-user">user</a>.
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-id">id</a> on the same <a href="https://www.w3.org/TR/webauthn-3/#authenticator">authenticator</a>. <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialentity-name">"name"</a> and
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialuserentity-displayname">"displayName"</a> MAY be used by the <a href="https://www.w3.org/TR/webauthn-3/#authenticator">authenticator</a> and <a href="https://www.w3.org/TR/webauthn-3/#client">client</a> in
+    ///         future <a href="https://www.w3.org/TR/webauthn-3/#authentication-ceremony">authentication ceremonies</a> to help the user select a <a href="https://www.w3.org/TR/credential-management-1/#concept-credential">credential</a>, but are not returned to the
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Party</a> as a result of future <a href="https://www.w3.org/TR/webauthn-3/#authentication-ceremony">authentication ceremonies</a>.
+    ///     </para>
     /// </summary>
+    /// <remarks>
+    ///     For further details, see <a href="https://www.w3.org/TR/webauthn-3/#dictionary-pkcredentialentity">"Public Key Entity Description (dictionary PublicKeyCredentialEntity)"</a> and
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#dictionary-user-credential-params">"User Account Parameters for Credential Generation (dictionary PublicKeyCredentialUserEntity)"</a>.
+    /// </remarks>
     [Required]
     [JsonPropertyName("user")]
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
