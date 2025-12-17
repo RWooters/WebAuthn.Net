@@ -9,7 +9,7 @@ namespace WebAuthn.Net.Models.Protocol;
 /// </summary>
 /// <remarks>
 ///     <para>
-///         <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dictionary-credential-descriptor">Web Authentication: An API for accessing Public Key Credentials Level 3 - §5.8.3. Credential Descriptor (dictionary PublicKeyCredentialDescriptor)</a>
+///         <a href="https://www.w3.org/TR/webauthn-3/#dictionary-credential-descriptor">Web Authentication: An API for accessing Public Key Credentials Level 3 - Credential Descriptor (dictionary PublicKeyCredentialDescriptor)</a>
 ///     </para>
 /// </remarks>
 public class PublicKeyCredentialDescriptor
@@ -72,15 +72,15 @@ public class PublicKeyCredentialDescriptor
         ArgumentNullException.ThrowIfNull(id);
         if (id.Length < 16)
         {
-            // https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#credential-id
+            // https://www.w3.org/TR/webauthn-3/#credential-id
             // At least 16 bytes that include at least 100 bits of entropy
             throw new ArgumentException($"The minimum length of the {nameof(id)} is 16.", nameof(id));
         }
 
         if (id.Length > 1023)
         {
-            // https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#credential-id
-            // At least 16 bytes that include at least 100 bits of entropy
+            // https://www.w3.org/TR/webauthn-3/#credential-id
+            // At most 1023 bytes long
             throw new ArgumentException($"The max length of the {nameof(id)} is 1023.", nameof(id));
         }
 
