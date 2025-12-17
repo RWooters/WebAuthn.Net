@@ -43,9 +43,9 @@ public class PublicKeyCredentialDescriptorJSON
     ///     </para>
     ///     <para>
     ///         This SHOULD be set to the value of the <a href="https://www.w3.org/TR/webauthn-3/#abstract-opdef-credential-record-transports">"transports"</a> item of the <a href="https://www.w3.org/TR/webauthn-3/#credential-record">credential record</a> representing the identified
-    ///         <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential-source">public key credential source</a>. This mirrors the <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredential-response">response</a>.
-    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorattestationresponse-gettransports">getTransports()</a> method of the <a href="https://www.w3.org/TR/webauthn-3/#publickeycredential">PublicKeyCredential</a> structure created by a
-    ///         <a href="https://www.w3.org/TR/credential-management-1/#dom-credentialscontainer-create">create()</a> operation.
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential-source">public key credential source</a>.
+    ///         This mirrors the <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredential-response">response</a>.<a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorattestationresponse-gettransports">getTransports()</a>
+    ///         method of the <a href="https://www.w3.org/TR/webauthn-3/#publickeycredential">PublicKeyCredential</a> structure created by a <a href="https://www.w3.org/TR/credential-management-1/#dom-credentialscontainer-create">create()</a> operation.
     ///     </para>
     /// </param>
     public PublicKeyCredentialDescriptorJSON(string type, string id, string[]? transports)
@@ -99,9 +99,9 @@ public class PublicKeyCredentialDescriptorJSON
     ///     </para>
     ///     <para>
     ///         This SHOULD be set to the value of the <a href="https://www.w3.org/TR/webauthn-3/#abstract-opdef-credential-record-transports">"transports"</a> item of the <a href="https://www.w3.org/TR/webauthn-3/#credential-record">credential record</a> representing the identified
-    ///         <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential-source">public key credential source</a>. This mirrors the <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredential-response">response</a>.
-    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorattestationresponse-gettransports">getTransports()</a> method of the <a href="https://www.w3.org/TR/webauthn-3/#publickeycredential">PublicKeyCredential</a> structure created by a
-    ///         <a href="https://www.w3.org/TR/credential-management-1/#dom-credentialscontainer-create">create()</a> operation.
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential-source">public key credential source</a>.
+    ///         This mirrors the <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredential-response">response</a>.<a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorattestationresponse-gettransports">getTransports()</a>
+    ///         method of the <a href="https://www.w3.org/TR/webauthn-3/#publickeycredential">PublicKeyCredential</a> structure created by a <a href="https://www.w3.org/TR/credential-management-1/#dom-credentialscontainer-create">create()</a> operation.
     ///     </para>
     /// </summary>
     /// <remarks>
