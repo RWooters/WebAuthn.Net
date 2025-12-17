@@ -68,9 +68,7 @@ public class AuthenticatorAttestationResponseJSON
     ///     <a href="https://www.w3.org/TR/webauthn-3/#dictionary-client-data">"Client Data Used in WebAuthn Signatures (dictionary CollectedClientData)"</a>) passed to the authenticator by the client in order to generate this assertion. The exact JSON serialization MUST be preserved,
     ///     as the <a href="https://www.w3.org/TR/webauthn-3/#collectedclientdata-hash-of-the-serialized-client-data">hash of the serialized client data</a> has been computed over it.
     /// </summary>
-    /// <remarks>
-    ///     <para>Base64URLString</para>
-    /// </remarks>
+    /// <remarks>Base64URLString</remarks>
     [JsonPropertyName("clientDataJSON")]
     [Required]
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
@@ -144,11 +142,9 @@ public class AuthenticatorAttestationResponseJSON
     ///     MUST be set to the output of <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorattestationresponse-getpublickeyalgorithm">getPublicKeyAlgorithm()</a>.
     /// </summary>
     /// <remarks>
-    ///     <para>
-    ///         <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorattestationresponse-getpublickeyalgorithm">getPublicKeyAlgorithm()</a> was only added in Level 2 of the WebAuthn specification. <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Parties</a> that
-    ///         require this function to exist may not interoperate with older user agents. <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Parties</a> SHOULD use feature detection before using this function by testing the value of 'getPublicKeyAlgorithm' in
-    ///         'AuthenticatorAttestationResponse.prototype'.
-    ///     </para>
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorattestationresponse-getpublickeyalgorithm">getPublicKeyAlgorithm()</a> was only added in Level 2 of the WebAuthn specification. <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Parties</a> that
+    ///     require this function to exist may not interoperate with older user agents. <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Parties</a> SHOULD use feature detection before using this function by testing the value of 'getPublicKeyAlgorithm' in
+    ///     'AuthenticatorAttestationResponse.prototype'.
     /// </remarks>
     [JsonPropertyName("publicKeyAlgorithm")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -165,9 +161,7 @@ public class AuthenticatorAttestationResponseJSON
     ///     details, see <a href="https://www.w3.org/TR/webauthn-3/#sctn-attestation">"Attestation"</a>, <a href="https://www.w3.org/TR/webauthn-3/#sctn-generating-an-attestation-object">"Generating an Attestation Object"</a>, and
     ///     <a href="https://www.w3.org/TR/webauthn-3/#fig-attStructs">Figure</a>.
     /// </summary>
-    /// <remarks>
-    ///     <para>Base64URLString</para>
-    /// </remarks>
+    /// <remarks>Base64URLString</remarks>
     [JsonPropertyName("attestationObject")]
     [Required]
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
