@@ -148,7 +148,6 @@ public static partial class DefaultClientDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to deserialize 'clientData'")]
     public static partial void FailedToDeserializeClientData(this ILogger logger);
@@ -158,7 +157,6 @@ public static partial class DefaultClientDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'clientData.type' contains an empty string or null")]
     public static partial void ClientDataTypeIsNullOrEmpty(this ILogger logger);
@@ -168,7 +166,6 @@ public static partial class DefaultClientDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'clientData.challenge' contains an empty string or null")]
     public static partial void ClientDataChallengeIsNullOrEmpty(this ILogger logger);
@@ -178,7 +175,6 @@ public static partial class DefaultClientDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'clientData.origin' contains an empty string or null")]
     public static partial void ClientDataOriginIsNullOrEmpty(this ILogger logger);
@@ -188,7 +184,6 @@ public static partial class DefaultClientDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to parse 'clientData.tokenBinding'")]
     public static partial void FailedToParseTokenBinding(this ILogger logger);
@@ -198,7 +193,6 @@ public static partial class DefaultClientDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'clientData.tokenBinding.status' contains an invalid value")]
     public static partial void InvalidTokenBindingStatus(this ILogger logger);
@@ -208,7 +202,6 @@ public static partial class DefaultClientDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'clientData.tokenBinding.status' is 'present', 'clientData.tokenBinding.id' must contain a value")]
     public static partial void TokenBindingIdIsNullOrEmpty(this ILogger logger);

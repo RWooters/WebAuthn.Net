@@ -92,7 +92,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'alg' value from 'attStmt'")]
     public static partial void AppleAnonymousDecodeFailureAlg(this ILogger logger);
@@ -102,7 +101,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'x5c' value from 'attStmt'")]
     public static partial void AppleAnonymousDecodeFailureX5C(this ILogger logger);
@@ -112,7 +110,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'alg' key in 'attStmt'")]
     public static partial void AppleAnonymousAlgKeyNotFound(this ILogger logger);
@@ -122,7 +119,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'alg' value in the 'attStmt' map contains an invalid data type")]
     public static partial void AppleAnonymousAlgValueInvalidDataType(this ILogger logger);
@@ -132,7 +128,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'alg' value in the 'attStmt' map is out of range")]
     public static partial void AppleAnonymousAlgValueOutOfRange(this ILogger logger);
@@ -143,7 +138,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// <param name="logger">Logger.</param>
     /// <param name="unknownAlg">Unknown 'alg' value.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'attStmt' contains an unknown 'alg': {UnknownAlg}")]
     public static partial void AppleAnonymousAlgValueUnknown(this ILogger logger, int unknownAlg);
@@ -153,7 +147,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'x5c' key in 'attStmt'")]
     public static partial void AppleAnonymousX5CKeyNotFound(this ILogger logger);
@@ -163,7 +156,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'x5c' value in the 'attStmt' map contains an invalid data type")]
     public static partial void AppleAnonymousX5CValueInvalidDataType(this ILogger logger);
@@ -173,7 +165,6 @@ public static partial class DefaultAppleAnonymousAttestationStatementDecoderLogg
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "One of the 'x5c' array elements in the 'attStmt' contains a CBOR element with an invalid data type")]
     public static partial void AppleAnonymousX5CValueInvalidElementDataType(this ILogger logger);

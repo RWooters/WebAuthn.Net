@@ -926,7 +926,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Registration ceremony not found")]
     public static partial void RegistrationCeremonyNotFound(this ILogger logger);
@@ -936,7 +935,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode RegistrationResponseJSON")]
     public static partial void FailedToDecodeRegistrationResponseJson(this ILogger logger);
@@ -946,7 +944,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode 'clientData'")]
     public static partial void FailedToDecodeClientData(this ILogger logger);
@@ -957,7 +954,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// <param name="logger">Logger.</param>
     /// <param name="clientDataType">The received 'clientData.type' value.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'clientData.type' is incorrect, as it expected 'webauthn.create' but received '{ClientDataType}'")]
     public static partial void IncorrectClientDataType(this ILogger logger, string clientDataType);
@@ -967,7 +963,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The challenge in the registration completion request doesn't match the one generated for this registration ceremony")]
     public static partial void ChallengeMismatch(this ILogger logger);
@@ -978,7 +973,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// <param name="logger">Logger.</param>
     /// <param name="clientDataOrigin">The origin obtained from clientData.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Invalid value for origin: '{ClientDataOrigin}'")]
     public static partial void InvalidOrigin(this ILogger logger, string clientDataOrigin);
@@ -989,7 +983,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// <param name="logger">Logger.</param>
     /// <param name="clientDataTopOrigin">The topOrigin obtained from clientData.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Invalid value for topOrigin: '{ClientDataTopOrigin}'")]
     public static partial void InvalidTopOrigin(this ILogger logger, string clientDataTopOrigin);
@@ -999,7 +992,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to perform CBOR decoding of the AttestationObject")]
     public static partial void AttestationObjectDecodeFailed(this ILogger logger);
@@ -1009,7 +1001,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'authData' must be present in the attestationObject for the registration ceremony, but it is null")]
     public static partial void NullAuthDataForRegistration(this ILogger logger);
@@ -1019,7 +1010,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode 'authData' from 'attestationObject'")]
     public static partial void FailedToDecodeAuthData(this ILogger logger);
@@ -1029,7 +1019,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode 'attStmt' from 'attestationObject'")]
     public static partial void FailedToDecodeAttStmt(this ILogger logger);
@@ -1039,7 +1028,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'rpIdHash' in 'authData' does not match the SHA-256 hash of the RP ID expected by the Relying Party")]
     public static partial void RpIdHashMismatch(this ILogger logger);
@@ -1049,7 +1037,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "User Present bit in 'authData.flags' isn't set")]
     public static partial void UserPresentBitNotSet(this ILogger logger);
@@ -1059,7 +1046,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "User Verification bit in 'authData.flags' is required, but not set")]
     public static partial void UserVerificationBitNotSet(this ILogger logger);
@@ -1069,7 +1055,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'authData.flags' contains an invalid combination of Backup Eligibility (BE) and Backup State (BS) flags")]
     public static partial void InvalidBeBsFlagsCombination(this ILogger logger);
@@ -1079,7 +1064,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'attestedCredentialData' is required for the registration ceremony, but it is null")]
     public static partial void AttestedCredentialDataIsNull(this ILogger logger);
@@ -1089,7 +1073,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'alg' parameter in authData doesn't match with any in 'options.pubKeyCredParams'")]
     public static partial void AuthDataAlgDoesntMatchPubKeyCredParams(this ILogger logger);
@@ -1099,7 +1082,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'attStmt' is invalid, failing to convey a valid attestation signature using 'fmt''s verification procedure with given 'authData' and 'hash'")]
     public static partial void InvalidAttStmt(this ILogger logger);
@@ -1109,7 +1091,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "A 'None' attestation has been provided, but the Relying Party policy does not permit 'None' attestations")]
     public static partial void NoneAttestationDisallowed(this ILogger logger);
@@ -1119,7 +1100,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "A 'Self' attestation has been provided, but the Relying Party policy does not permit 'Self' attestations")]
     public static partial void SelfAttestationDisallowed(this ILogger logger);
@@ -1129,7 +1109,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Attestation Statement trustworthy check failed")]
     public static partial void AttestationTrustPathIsInvalid(this ILogger logger);
@@ -1139,7 +1118,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "CredentialId in AttestedCredentialData should be less or equal to 1023 bytes")]
     public static partial void CredentialIdIsTooBig(this ILogger logger);
@@ -1149,7 +1127,6 @@ public static partial class DefaultRegistrationCeremonyServiceLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "CredentialId already associated with different user")]
     public static partial void CredentialIdExist(this ILogger logger);

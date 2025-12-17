@@ -251,7 +251,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'alg' value from 'attStmt'")]
     public static partial void TpmDecodeFailureAlg(this ILogger logger);
@@ -261,7 +260,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'sig' value from 'attStmt'")]
     public static partial void TpmDecodeFailureSig(this ILogger logger);
@@ -271,7 +269,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'ver' value from 'attStmt'")]
     public static partial void TpmDecodeFailureVer(this ILogger logger);
@@ -281,7 +278,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'x5c' value from 'attStmt'")]
     public static partial void TpmDecodeFailureX5C(this ILogger logger);
@@ -291,7 +287,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'pubArea' value from 'attStmt'")]
     public static partial void TpmDecodeFailurePubArea(this ILogger logger);
@@ -301,7 +296,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'certInfo' value from 'attStmt'")]
     public static partial void TpmDecodeFailureCertInfo(this ILogger logger);
@@ -311,7 +305,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'alg' key in 'attStmt'")]
     public static partial void TpmAlgKeyNotFound(this ILogger logger);
@@ -321,7 +314,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'alg' value in the 'attStmt' map contains an invalid data type")]
     public static partial void TpmAlgValueInvalidDataType(this ILogger logger);
@@ -331,7 +323,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'alg' value in the 'attStmt' map is out of range")]
     public static partial void TpmAlgValueOutOfRange(this ILogger logger);
@@ -342,7 +333,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// <param name="logger">Logger.</param>
     /// <param name="unknownAlg">Unknown 'alg' value.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'attStmt' contains an unknown 'alg': {UnknownAlg}")]
     public static partial void TpmAlgValueUnknown(this ILogger logger, int unknownAlg);
@@ -352,7 +342,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'sig' key in 'attStmt'")]
     public static partial void TpmSigKeyNotFound(this ILogger logger);
@@ -362,7 +351,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'ver' key in 'attStmt'")]
     public static partial void TpmVerKeyNotFound(this ILogger logger);
@@ -372,7 +360,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'sig' value in the 'attStmt' map contains an invalid data type")]
     public static partial void TpmSigValueInvalidDataType(this ILogger logger);
@@ -382,7 +369,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'ver' value in the 'attStmt' map contains an invalid data type")]
     public static partial void TpmVerValueInvalidDataType(this ILogger logger);
@@ -392,7 +378,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'x5c' key in 'attStmt'")]
     public static partial void TpmX5CKeyNotFound(this ILogger logger);
@@ -402,7 +387,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'x5c' value in the 'attStmt' map contains an invalid data type")]
     public static partial void TpmX5CValueInvalidDataType(this ILogger logger);
@@ -412,7 +396,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "One of the 'x5c' array elements in the 'attStmt' contains a CBOR element with an invalid data type")]
     public static partial void TpmX5CValueInvalidElementDataType(this ILogger logger);
@@ -423,7 +406,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// <param name="logger">Logger.</param>
     /// <param name="cborMapKey"></param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the key '{CborMapKey}' in 'attStmt'")]
     public static partial void TpmCantFindCborMapKey(this ILogger logger, string cborMapKey);
@@ -434,7 +416,6 @@ public static partial class DefaultTpmAttestationStatementDecoderLoggingExtensio
     /// <param name="logger">Logger.</param>
     /// <param name="cborMapKey">The key that failed to be found in <see cref="CborMap" />. </param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "An invalid data type is used for the '{CborMapKey}' value in 'attStmt'")]
     public static partial void TpmCborMapKeyInvalidDataType(this ILogger logger, string cborMapKey);

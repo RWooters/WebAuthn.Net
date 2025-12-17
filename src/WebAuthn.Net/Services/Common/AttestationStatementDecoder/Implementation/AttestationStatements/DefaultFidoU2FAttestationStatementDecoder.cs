@@ -126,7 +126,6 @@ public static partial class DefaultFidoU2FAttestationStatementDecoderLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'sig' value from 'attStmt'")]
     public static partial void FidoU2FDecodeFailureSig(this ILogger logger);
@@ -136,7 +135,6 @@ public static partial class DefaultFidoU2FAttestationStatementDecoderLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'x5c' value from 'attStmt'")]
     public static partial void FidoU2FDecodeFailureX5C(this ILogger logger);
@@ -146,7 +144,6 @@ public static partial class DefaultFidoU2FAttestationStatementDecoderLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'sig' key in 'attStmt'")]
     public static partial void FidoU2FSigKeyNotFound(this ILogger logger);
@@ -156,7 +153,6 @@ public static partial class DefaultFidoU2FAttestationStatementDecoderLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'sig' value in the 'attStmt' map contains an invalid data type")]
     public static partial void FidoU2FSigValueInvalidDataType(this ILogger logger);
@@ -166,7 +162,6 @@ public static partial class DefaultFidoU2FAttestationStatementDecoderLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'x5c' key in 'attStmt'")]
     public static partial void FidoU2Fx5CKeyNotFound(this ILogger logger);
@@ -176,7 +171,6 @@ public static partial class DefaultFidoU2FAttestationStatementDecoderLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'x5c' value in the 'attStmt' map contains an invalid data type")]
     public static partial void FidoU2Fx5CValueInvalidDataType(this ILogger logger);
@@ -186,7 +180,6 @@ public static partial class DefaultFidoU2FAttestationStatementDecoderLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "One of the 'x5c' array elements in the 'attStmt' contains a CBOR element with an invalid data type")]
     public static partial void FidoU2Fx5CValueInvalidElementDataType(this ILogger logger);

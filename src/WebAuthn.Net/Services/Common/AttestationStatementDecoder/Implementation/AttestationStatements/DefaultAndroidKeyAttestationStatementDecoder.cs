@@ -166,7 +166,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'alg' value from 'attStmt'")]
     public static partial void AndroidKeyDecodeFailureAlg(this ILogger logger);
@@ -176,7 +175,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'sig' value from 'attStmt'")]
     public static partial void AndroidKeyDecodeFailureSig(this ILogger logger);
@@ -186,7 +184,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'x5c' value from 'attStmt'")]
     public static partial void AndroidKeyDecodeFailureX5C(this ILogger logger);
@@ -196,7 +193,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'alg' key in 'attStmt'")]
     public static partial void AndroidKeyAlgKeyNotFound(this ILogger logger);
@@ -206,7 +202,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'alg' value in the 'attStmt' map contains an invalid data type")]
     public static partial void AndroidKeyAlgValueInvalidDataType(this ILogger logger);
@@ -216,7 +211,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'alg' value in the 'attStmt' map is out of range")]
     public static partial void AndroidKeyAlgValueOutOfRange(this ILogger logger);
@@ -227,7 +221,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// <param name="logger">Logger.</param>
     /// <param name="unknownAlg">Unknown 'alg' value.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'attStmt' contains an unknown 'alg': {UnknownAlg}")]
     public static partial void AndroidKeyAlgValueUnknown(this ILogger logger, int unknownAlg);
@@ -237,7 +230,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'sig' key in 'attStmt'")]
     public static partial void AndroidKeySigKeyNotFound(this ILogger logger);
@@ -247,7 +239,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'sig' value in the 'attStmt' map contains an invalid data type")]
     public static partial void AndroidKeySigValueInvalidDataType(this ILogger logger);
@@ -257,7 +248,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'x5c' key in 'attStmt'")]
     public static partial void AndroidKeyX5CKeyNotFound(this ILogger logger);
@@ -267,7 +257,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'x5c' value in the 'attStmt' map contains an invalid data type")]
     public static partial void AndroidKeyX5CValueInvalidDataType(this ILogger logger);
@@ -277,7 +266,6 @@ public static partial class DefaultAndroidKeyAttestationStatementDecoderLoggingE
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "One of the 'x5c' array elements in the 'attStmt' contains a CBOR element with an invalid data type")]
     public static partial void AndroidKeyX5CValueInvalidElementDataType(this ILogger logger);

@@ -211,10 +211,12 @@ public class DefaultCoseKeyDeserializer : ICoseKeyDeserializer
         [NotNullWhen(true)] out CoseAlgorithm? alg,
         [NotNullWhen(true)] out AbstractCborObject? algKey)
     {
-        // https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-attested-credential-data
-        // The COSE_Key-encoded credential public key MUST contain the "alg" parameter and MUST NOT contain any other OPTIONAL parameters.
+        // https://www.w3.org/TR/webauthn-3/#sctn-attested-credential-data
+        // The COSE_Key-encoded credential public key MUST contain the "alg" parameter
+        // and MUST NOT contain any other OPTIONAL parameters.
         // The "alg" parameter MUST contain a COSEAlgorithmIdentifier value.
-        // The encoded credential public key MUST also contain any additional REQUIRED parameters stipulated by the relevant key type specification,
+        // The encoded credential public key MUST also contain any additional REQUIRED parameters
+        // stipulated by the relevant key type specification,
         // i.e., REQUIRED for the key type "kty" and algorithm "alg" (see Section 2 of [RFC9053]).
         // https://www.rfc-editor.org/rfc/rfc9052#section-1.5
         // label = int / tstr
@@ -235,7 +237,7 @@ public class DefaultCoseKeyDeserializer : ICoseKeyDeserializer
         // tstr: A UTF-8 text string (major type 3).
         // int: An unsigned integer or a negative integer.
         // --------------------
-        // In the current implementation, each kty has its own set of supported algorithms.
+        // In the current implementation, each "kty" has its own set of supported algorithms.
         var supportedAlg = kty.GetSupportedAlgorithms();
         var key = new CborUnsignedInteger((uint) CoseKeyCommonParameter.alg);
         if (!TryGetEnumFromInt(cborCoseKey, "alg", key, out alg))
@@ -684,7 +686,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode COSE Key from CBOR")]
     public static partial void DecodeFailure(this ILogger logger);
@@ -694,7 +695,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "COSE Key must be represented as a CBOR map")]
     public static partial void CoseKeyMustBeCborMap(this ILogger logger);
@@ -704,7 +704,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Encountered a label that is neither a string nor an integer")]
     public static partial void InvalidLabel(this ILogger logger);
@@ -714,7 +713,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Keys in the map representing the COSE_Key in CBOR format must only appear once")]
     public static partial void DuplicateKey(this ILogger logger);
@@ -724,7 +722,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to obtain a CBOR map representing a COSE_Key")]
     public static partial void CborMapObtainingFailure(this ILogger logger);
@@ -734,7 +731,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to obtain the value of 'kty'")]
     public static partial void KtyObtainingFailure(this ILogger logger);
@@ -744,7 +740,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to remove the 'kty' key from the object representing COSE_Key")]
     public static partial void KtyRemoveFailure(this ILogger logger);
@@ -754,7 +749,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to obtain the value of 'alg'")]
     public static partial void AlgObtainingFailure(this ILogger logger);
@@ -764,7 +758,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to remove the 'alg' key from the object representing COSE_Key")]
     public static partial void AlgRemoveFailure(this ILogger logger);
@@ -775,7 +768,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// <param name="logger">Logger.</param>
     /// <param name="cborMapKey">The name of the property that could not be found in the CBOR object describing the COSE key.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the key '{CborMapKey}' in the COSE_Key")]
     public static partial void CantFindCborMapKey(this ILogger logger, string cborMapKey);
@@ -786,7 +778,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// <param name="logger">Logger.</param>
     /// <param name="cborMapKey">The name of the property for which an invalid data type is used in the CBOR object describing the COSE key.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "An invalid data type is used for the '{CborMapKey}' value in COSE_Key")]
     public static partial void CborMapKeyInvalidDataType(this ILogger logger, string cborMapKey);
@@ -797,7 +788,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// <param name="logger">Logger.</param>
     /// <param name="cborMapKey">The name of the property that contains a value exceeding the allowable limits in the CBOR object describing the COSE key.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "A value out of the acceptable range is specified for the '{CborMapKey}' in COSE_Key")]
     public static partial void CborMapValueOutOfRange(this ILogger logger, string cborMapKey);
@@ -808,7 +798,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// <param name="logger">Logger.</param>
     /// <param name="cborMapKey">The name of the property that contains an invalid value in the CBOR object describing the COSE key.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "An invalid value is specified for the '{CborMapKey}' in COSE_Key")]
     public static partial void CborMapInvalidValue(this ILogger logger, string cborMapKey);
@@ -817,15 +806,11 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     ///     'alg': {alg} in COSE_Key was recognized, but is not in the set of valid options for 'kty': {kty}
     /// </summary>
     /// <param name="logger">Logger.</param>
-    /// <param name="alg">
-    ///     Recognized <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a> describing the algorithm used in the COSE key, but not corresponding to the COSE key type in the <paramref name="kty" />
-    ///     parameter.
-    /// </param>
+    /// <param name="alg">Recognized <a href="https://www.w3.org/TR/webauthn-3/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a> describing the algorithm used in the COSE key, but not corresponding to the COSE key type in the <paramref name="kty" /> parameter.</param>
     /// <param name="kty">
     ///     <a href="https://datatracker.ietf.org/doc/html/rfc9053#section-7">COSE Key type</a>
     /// </param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'alg': {alg} in COSE_Key was recognized, but is not in the set of valid options for 'kty': {kty}")]
     public static partial void AlgOutOfRangeForKty(this ILogger logger, CoseAlgorithm alg, CoseKeyType kty);
@@ -838,7 +823,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     ///     <a href="https://datatracker.ietf.org/doc/html/rfc9053#section-7">COSE Key type</a>
     /// </param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The COSE_Key, based on 'kty': {kty}, was recognized as an EC2-formatted key but encountered an error during reading")]
     public static partial void Ec2KeyObtainingFailure(this ILogger logger, CoseKeyType kty);
@@ -851,7 +835,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     ///     <a href="https://datatracker.ietf.org/doc/html/rfc9053#section-7">COSE Key type</a>
     /// </param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The COSE_Key, based on 'kty': {kty}, was recognized as an RSA-formatted key but encountered an error during reading")]
     public static partial void RsaKeyObtainingFailure(this ILogger logger, CoseKeyType kty);
@@ -864,7 +847,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     ///     <a href="https://datatracker.ietf.org/doc/html/rfc9053#section-7">COSE Key type</a>
     /// </param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The COSE_Key, based on 'kty': {kty}, was recognized as an OKP-formatted key but encountered an error during reading")]
     public static partial void OkpKeyObtainingFailure(this ILogger logger, CoseKeyType kty);
@@ -874,7 +856,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "An unknown 'kty' value has been encountered")]
     public static partial void UnknownKty(this ILogger logger);
@@ -883,9 +864,8 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     ///     No set of supported elliptic curve formats is specified for 'alg': {alg}
     /// </summary>
     /// <param name="logger">Logger.</param>
-    /// <param name="alg"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a> for which supported elliptic curves could not be found.</param>
+    /// <param name="alg"><a href="https://www.w3.org/TR/webauthn-3/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a> for which supported elliptic curves could not be found.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "No set of supported elliptic curve formats is specified for 'alg': {alg}")]
     public static partial void NoEllipticCurvesForAlg(this ILogger logger, CoseAlgorithm alg);
@@ -895,11 +875,10 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     /// <param name="alg">
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a>
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a>
     /// </param>
     /// <param name="crv">The elliptic curve, which is not included in the list of supported ones for the specified <paramref name="alg" /> (for a key in EC2 format).</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'crv': {crv} is not included in the set of supported elliptic curve formats for 'alg': {alg} for the key in EC2 format")]
     public static partial void DisallowedEc2EllipticCurveForAlg(this ILogger logger, CoseAlgorithm alg, CoseEc2EllipticCurve crv);
@@ -909,11 +888,10 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     /// <param name="alg">
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a>
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a>
     /// </param>
     /// <param name="crv">The elliptic curve, which is not included in the list of supported ones for the specified <paramref name="alg" /> (for a key in OKP format).</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'crv': {crv} is not included in the set of supported elliptic curve formats for 'alg': {alg} for the key in OKP format")]
     public static partial void DisallowedOkpEllipticCurveForAlg(this ILogger logger, CoseAlgorithm alg, CoseOkpEllipticCurve crv);
@@ -923,7 +901,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to obtain the value of 'crv'")]
     public static partial void CrvObtainingFailure(this ILogger logger);
@@ -933,7 +910,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to remove the 'crv' key from the object representing COSE_Key")]
     public static partial void CrvRemoveFailure(this ILogger logger);
@@ -943,7 +919,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to obtain the value of 'x'")]
     public static partial void XCoordinateObtainingFailure(this ILogger logger);
@@ -953,7 +928,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to remove the 'x' key from the object representing COSE_Key")]
     public static partial void XCoordinateRemoveFailure(this ILogger logger);
@@ -963,7 +937,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to obtain the value of 'y'")]
     public static partial void YCoordinateObtainingFailure(this ILogger logger);
@@ -973,7 +946,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to remove the 'y' key from the object representing COSE_Key")]
     public static partial void YCoordinateRemoveFailure(this ILogger logger);
@@ -983,7 +955,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to obtain the value of 'n'")]
     public static partial void RsaModulusNObtainingFailure(this ILogger logger);
@@ -993,7 +964,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to remove the 'n' key from the object representing COSE_Key")]
     public static partial void RsaModulusNRemoveFailure(this ILogger logger);
@@ -1003,7 +973,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to obtain the value of 'e'")]
     public static partial void RsaPublicExponentEObtainingFailure(this ILogger logger);
@@ -1013,7 +982,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to remove the 'e' key from the object representing COSE_Key")]
     public static partial void RsaPublicExponentERemoveFailure(this ILogger logger);
@@ -1023,7 +991,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The COSE_Key was not properly encoded in the EC2 format, as the map still contains unrecognized keys after the necessary values have been extracted")]
     public static partial void Ec2UnrecognizedKeysRemainFailure(this ILogger logger);
@@ -1033,7 +1000,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The COSE_Key was not properly encoded in the RSA format, as the map still contains unrecognized keys after the necessary values have been extracted")]
     public static partial void RsaUnrecognizedKeysRemainFailure(this ILogger logger);
@@ -1043,7 +1009,6 @@ public static partial class DefaultCoseKeyDeserializerLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The COSE_Key was not properly encoded in the OKP format, as the map still contains unrecognized keys after the necessary values have been extracted")]
     public static partial void OkpUnrecognizedKeysRemainFailure(this ILogger logger);

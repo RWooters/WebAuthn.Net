@@ -304,7 +304,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The minimum size of the encoded authenticator data structure is 37 bytes")]
     public static partial void AuthDataTooSmall(this ILogger logger);
@@ -314,7 +313,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'rpIdHash'")]
     public static partial void AuthDataReadFailureRpIdHash(this ILogger logger);
@@ -324,7 +322,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'flags'")]
     public static partial void AuthDataReadFailureFlags(this ILogger logger);
@@ -334,7 +331,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'signCount'")]
     public static partial void AuthDataReadFailureSignCount(this ILogger logger);
@@ -344,7 +340,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'attestedCredentialData'")]
     public static partial void AuthDataReadFailureAttestedCredentialData(this ILogger logger);
@@ -354,7 +349,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'attestedCredentialData.aaguid'")]
     public static partial void AuthDataReadFailureAttestedCredentialDataAaguid(this ILogger logger);
@@ -365,7 +359,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// <param name="logger">Logger</param>
     /// <param name="credentialIdLength">The <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-attestedcredentialdata-credentialidlength">'attestedCredentialData.credentialIdLength'</a> value.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'attestedCredentialData.credentialIdLength' is {CredentialIdLength}, which is greater than the maximum limit of 1023")]
     public static partial void AuthDataReadFailureAttestedCredentialDataCredentialIdLengthTooBig(this ILogger logger, int credentialIdLength);
@@ -375,7 +368,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'attestedCredentialData.credentialIdLength'")]
     public static partial void AuthDataReadFailureAttestedCredentialDataCredentialIdLength(this ILogger logger);
@@ -385,7 +377,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'attestedCredentialData.credentialId'")]
     public static partial void AuthDataReadFailureAttestedCredentialDataCredentialId(this ILogger logger);
@@ -395,7 +386,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'attestedCredentialData.credentialPublicKey'")]
     public static partial void AuthDataReadFailureAttestedCredentialDataCredentialPublicKey(this ILogger logger);
@@ -405,7 +395,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to read 'extensions'")]
     public static partial void AuthDataReadFailureExtensions(this ILogger logger);
@@ -415,7 +404,6 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "After decoding 'authData' in accordance with its structure, some data has been found to still remain within it")]
     public static partial void RemainingDataFailure(this ILogger logger);

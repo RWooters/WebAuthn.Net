@@ -221,7 +221,6 @@ public static partial class DefaultAttestationStatementVerifierLoggingExtensions
     ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-statement-format-identifier">Attestation statement format identifier</a>.
     /// </param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'attStmtVerificationRequest.AttStmt' type: {AttStmtType} does not match 'fmt': {Fmt}.")]
     public static partial void AttStmtVerifierInvalidAttestationStatement(this ILogger logger, string attStmtType, AttestationStatementFormat fmt);
@@ -231,7 +230,6 @@ public static partial class DefaultAttestationStatementVerifierLoggingExtensions
     /// </summary>
     /// <param name="logger">Logger</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Unknown 'fmt'")]
     public static partial void UnknownFmt(this ILogger logger);

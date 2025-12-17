@@ -1073,7 +1073,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Authentication ceremony not found")]
     public static partial void AuthenticationCeremonyNotFound(this ILogger logger);
@@ -1083,7 +1082,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode AuthenticationResponseJSON")]
     public static partial void FailedToDecodeAuthenticationResponseJson(this ILogger logger);
@@ -1093,7 +1091,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The received credential.id is not included in the list specified in options.allowCredentials")]
     public static partial void InvalidCredentialId(this ILogger logger);
@@ -1103,7 +1100,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find an existing credential with the specified Id")]
     public static partial void CredentialNotFound(this ILogger logger);
@@ -1113,7 +1109,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The credential obtained from the storage does not match the parameters of the authentication ceremony")]
     public static partial void CredentialMismatch(this ILogger logger);
@@ -1123,7 +1118,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "response.userHandle does not equal the user handle of the user account")]
     public static partial void ResponseUserHandleMismatch(this ILogger logger);
@@ -1133,7 +1127,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "response.userHandle is not present")]
     public static partial void UserHandleNotPresentInResponse(this ILogger logger);
@@ -1143,7 +1136,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode response.AuthenticatorData")]
     public static partial void FailedToDecodeResponseAuthenticatorData(this ILogger logger);
@@ -1153,7 +1145,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode response.clientDataJSON")]
     public static partial void FailedToDecodeResponseClientDataJson(this ILogger logger);
@@ -1164,7 +1155,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// <param name="logger">Logger.</param>
     /// <param name="clientDataType">The received 'clientData.type' value.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'clientData.type' is incorrect, as it expected 'webauthn.get' but received '{ClientDataType}'")]
     public static partial void IncorrectClientDataType(this ILogger logger, string clientDataType);
@@ -1174,7 +1164,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The challenge in the authentication completion request doesn't match the one generated for this authentication ceremony")]
     public static partial void ChallengeMismatch(this ILogger logger);
@@ -1185,7 +1174,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// <param name="logger">Logger.</param>
     /// <param name="clientDataOrigin">The origin obtained from clientData.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Invalid value for origin: '{ClientDataOrigin}'")]
     public static partial void InvalidOrigin(this ILogger logger, string clientDataOrigin);
@@ -1196,7 +1184,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// <param name="logger">Logger.</param>
     /// <param name="clientDataTopOrigin">The topOrigin obtained from clientData.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Invalid value for topOrigin: '{ClientDataTopOrigin}'")]
     public static partial void InvalidTopOrigin(this ILogger logger, string clientDataTopOrigin);
@@ -1206,7 +1193,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'rpIdHash' in 'authData' does not match the SHA-256 hash of the RP ID expected by the Relying Party")]
     public static partial void RpIdHashMismatch(this ILogger logger);
@@ -1216,7 +1202,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "User Present bit in 'authData.flags' isn't set")]
     public static partial void UserPresentBitNotSet(this ILogger logger);
@@ -1226,7 +1211,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "User Verification bit in 'authData.flags' is required, but not set")]
     public static partial void UserVerificationBitNotSet(this ILogger logger);
@@ -1236,7 +1220,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "'authData.flags' contains an invalid combination of Backup Eligibility (BE) and Backup State (BS) flags")]
     public static partial void InvalidBeBsFlagsCombination(this ILogger logger);
@@ -1246,7 +1229,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Backup Eligible bit in 'authData.flags' is required, but not set")]
     public static partial void BackupEligibleBitNotSet(this ILogger logger);
@@ -1256,7 +1238,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Backup Eligible bit in 'authData.flags' is set, but it shouldn't be")]
     public static partial void BackupEligibleBitSet(this ILogger logger);
@@ -1266,7 +1247,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to transform the public key of the found credentialRecord into a CoseKey")]
     public static partial void FailedToTransformCredentialPublicKey(this ILogger logger);
@@ -1276,7 +1256,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Invalid signature")]
     public static partial void InvalidSignature(this ILogger logger);
@@ -1286,7 +1265,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The obtained signCount is less than or equal to the one that was saved earlier")]
     public static partial void AbortBySignCount(this ILogger logger);
@@ -1296,7 +1274,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to perform CBOR decoding of the AttestationObject")]
     public static partial void AttestationObjectDecodeFailed(this ILogger logger);
@@ -1306,7 +1283,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "AttestationObject is invalid")]
     public static partial void AttestationObjectVerificationFailed(this ILogger logger);
@@ -1316,7 +1292,6 @@ public static partial class DefaultAuthenticationCeremonyServiceLoggingExtension
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to update user credential record")]
     public static partial void CredentialStorageUpdateFailed(this ILogger logger);

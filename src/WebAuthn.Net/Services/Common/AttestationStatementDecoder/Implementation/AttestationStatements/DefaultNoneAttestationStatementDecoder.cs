@@ -52,7 +52,6 @@ public static partial class DefaultNoneAttestationStatementDecoderLoggingExtensi
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'attStmt' for the 'none' type should consist of an empty CBOR map")]
     public static partial void NoneNonEmptyMap(this ILogger logger);

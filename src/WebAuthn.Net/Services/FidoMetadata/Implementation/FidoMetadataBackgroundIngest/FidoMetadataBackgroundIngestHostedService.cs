@@ -215,7 +215,6 @@ public static partial class FidoMetadataBackgroundIngestHostedServiceLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to download metadata from the FIDO Metadata Service")]
     public static partial void FailedToDownload(this ILogger logger);
@@ -225,7 +224,6 @@ public static partial class FidoMetadataBackgroundIngestHostedServiceLoggingExte
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode data downloaded from the FIDO Metadata Service")]
     public static partial void FailedToDecode(this ILogger logger);

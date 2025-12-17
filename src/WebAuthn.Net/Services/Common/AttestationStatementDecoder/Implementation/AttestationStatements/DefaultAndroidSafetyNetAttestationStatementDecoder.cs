@@ -107,7 +107,6 @@ public static partial class DefaultAndroidSafetyNetAttestationStatementDecoderLo
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'ver' value from 'attStmt'")]
     public static partial void AndroidSafetyNetDecodeFailureVer(this ILogger logger);
@@ -117,7 +116,6 @@ public static partial class DefaultAndroidSafetyNetAttestationStatementDecoderLo
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'response' value from 'attStmt'")]
     public static partial void AndroidSafetyNetDecodeFailureResponse(this ILogger logger);
@@ -127,7 +125,6 @@ public static partial class DefaultAndroidSafetyNetAttestationStatementDecoderLo
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'ver' key in 'attStmt'")]
     public static partial void AndroidSafetyNetVerKeyNotFound(this ILogger logger);
@@ -137,7 +134,6 @@ public static partial class DefaultAndroidSafetyNetAttestationStatementDecoderLo
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'ver' value in the 'attStmt' map contains an invalid data type")]
     public static partial void AndroidSafetyNetVerValueInvalidDataType(this ILogger logger);
@@ -147,7 +143,6 @@ public static partial class DefaultAndroidSafetyNetAttestationStatementDecoderLo
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'response' key in 'attStmt'")]
     public static partial void AndroidSafetyNetResponseKeyNotFound(this ILogger logger);
@@ -157,7 +152,6 @@ public static partial class DefaultAndroidSafetyNetAttestationStatementDecoderLo
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'response' value in the 'attStmt' map contains an invalid data type")]
     public static partial void AndroidSafetyNetResponseValueInvalidDataType(this ILogger logger);

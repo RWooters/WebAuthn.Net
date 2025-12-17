@@ -195,7 +195,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'alg' value from 'attStmt'")]
     public static partial void PackedDecodeFailureAlg(this ILogger logger);
@@ -205,7 +204,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'sig' value from 'attStmt'")]
     public static partial void PackedDecodeFailureSig(this ILogger logger);
@@ -215,7 +213,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to decode the 'x5c' value from 'attStmt'")]
     public static partial void PackedDecodeFailureX5C(this ILogger logger);
@@ -225,7 +222,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'alg' key in 'attStmt'")]
     public static partial void PackedAlgKeyNotFound(this ILogger logger);
@@ -235,7 +231,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'alg' value in the 'attStmt' map contains an invalid data type")]
     public static partial void PackedAlgValueInvalidDataType(this ILogger logger);
@@ -245,7 +240,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'alg' value in the 'attStmt' map is out of range")]
     public static partial void PackedAlgValueOutOfRange(this ILogger logger);
@@ -256,7 +250,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// <param name="logger">Logger.</param>
     /// <param name="unknownAlg">Unknown 'alg' value.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'attStmt' contains an unknown 'alg': {UnknownAlg}")]
     public static partial void PackedAlgValueUnknown(this ILogger logger, int unknownAlg);
@@ -266,7 +259,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "Failed to find the 'sig' key in 'attStmt'")]
     public static partial void PackedSigKeyNotFound(this ILogger logger);
@@ -276,7 +268,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'sig' value in the 'attStmt' map contains an invalid data type")]
     public static partial void PackedSigValueInvalidDataType(this ILogger logger);
@@ -286,7 +277,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "The 'x5c' value in the 'attStmt' map contains an invalid data type")]
     public static partial void PackedX5CValueInvalidDataType(this ILogger logger);
@@ -296,7 +286,6 @@ public static partial class DefaultPackedAttestationStatementDecoderLoggingExten
     /// </summary>
     /// <param name="logger">Logger.</param>
     [LoggerMessage(
-        EventId = default,
         Level = LogLevel.Warning,
         Message = "One of the 'x5c' array elements in the 'attStmt' contains a CBOR element with an invalid data type")]
     public static partial void PackedX5CValueInvalidElementDataType(this ILogger logger);
