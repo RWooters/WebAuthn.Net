@@ -30,7 +30,7 @@ public class MySqlPublicKeyCredentialDescriptor
     ///         <a href="https://www.w3.org/TR/webauthn-3/#publickeycredential">PublicKeyCredential</a>.
     ///     </para>
     /// </param>
-    /// <param name="id">
+    /// <param name="credentialId">
     ///     <para>This member contains the <a href="https://www.w3.org/TR/webauthn-3/#credential-id">credential ID</a> of the <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential">public key credential</a> the caller is referring to.</para>
     ///     <para>
     ///         This SHOULD be set to the value of the <a href="https://www.w3.org/TR/webauthn-3/#abstract-opdef-credential-record-id">"id"</a> item of the <a href="https://www.w3.org/TR/webauthn-3/#credential-record">credential record</a> representing the identified
@@ -53,10 +53,10 @@ public class MySqlPublicKeyCredentialDescriptor
     ///     <para>For storage in MySQL, the values are transformed into json ('json' data type).</para>
     /// </param>
     /// <param name="createdAtUnixTime">Unix timestamp (in seconds) of when the <see cref="PublicKeyCredentialDescriptor" /> was created.</param>
-    public MySqlPublicKeyCredentialDescriptor(int type, byte[] id, string transports, long createdAtUnixTime)
+    public MySqlPublicKeyCredentialDescriptor(int type, byte[] credentialId, string transports, long createdAtUnixTime)
     {
         Type = type;
-        Id = id;
+        CredentialId = credentialId;
         Transports = transports;
         CreatedAtUnixTime = createdAtUnixTime;
     }
@@ -85,7 +85,7 @@ public class MySqlPublicKeyCredentialDescriptor
     /// </summary>
     [Required]
     [MaxLength(1024)]
-    public byte[] Id { get; }
+    public byte[] CredentialId { get; }
 
     /// <summary>
     ///     <para>
@@ -145,7 +145,7 @@ public class MySqlPublicKeyCredentialDescriptor
             }
         }
 
-        result = new(type, Id, transports);
+        result = new(type, CredentialId, transports);
         return true;
     }
 }

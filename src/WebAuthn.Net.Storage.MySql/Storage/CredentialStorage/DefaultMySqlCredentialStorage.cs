@@ -46,7 +46,7 @@ public class DefaultMySqlCredentialStorage<TContext> : ICredentialStorage<TConte
         ArgumentNullException.ThrowIfNull(context);
         cancellationToken.ThrowIfCancellationRequested();
         var dbPublicKeysEnumerable = await context.Connection.QueryAsync<MySqlPublicKeyCredentialDescriptor>(new(@"
-SELECT `Type`, `CredentialId` as `Id`, `Transports`, `CreatedAtUnixTime`
+SELECT `Type`, `CredentialId`, `Transports`, `CreatedAtUnixTime`
 FROM `CredentialRecords`
 WHERE `UserHandle` = @userHandle AND `RpId` = @rpId;",
             new
