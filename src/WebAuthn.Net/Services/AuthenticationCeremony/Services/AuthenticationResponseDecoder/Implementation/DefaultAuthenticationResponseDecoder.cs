@@ -87,10 +87,10 @@ public class DefaultAuthenticationResponseDecoder : IAuthenticationResponseDecod
     }
 
     /// <summary>
-    ///     Decodes <see cref="AuthenticatorAssertionResponseJSON" /> (<a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#iface-authenticatorassertionresponse">AuthenticatorAssertionResponse</a>) from a model suitable for JSON serialization into a typed representation suitable
+    ///     Decodes <see cref="AuthenticatorAssertionResponseJSON" /> (<a href="https://www.w3.org/TR/webauthn-3/#iface-authenticatorassertionresponse">AuthenticatorAssertionResponse</a>) from a model suitable for JSON serialization into a typed representation suitable
     ///     for further work.
     /// </summary>
-    /// <param name="response"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#iface-authenticatorassertionresponse">AuthenticatorAssertionResponse</a> model, suitable for serialization into JSON.</param>
+    /// <param name="response"><a href="https://www.w3.org/TR/webauthn-3/#iface-authenticatorassertionresponse">AuthenticatorAssertionResponse</a> model, suitable for serialization into JSON.</param>
     /// <returns>If the decoding was successful, the result contains the <see cref="AuthenticatorAssertionResponse" />; otherwise, the result indicates that an error occurred during the decoding process.</returns>
     protected virtual Result<AuthenticatorAssertionResponse> DecodeAuthenticatorAssertionResponse(AuthenticatorAssertionResponseJSON response)
     {

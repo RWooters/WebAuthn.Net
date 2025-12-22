@@ -4,9 +4,7 @@
 ///     Actions recommended to be taken depending on the credential backup state.
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://www.w3.org/TR/webauthn-3/#sctn-credential-backup">Web Authentication: An API for accessing Public Key Credentials Level 3 - Credential Backup State</a>
-///     </para>
+///     <a href="https://www.w3.org/TR/webauthn-3/#sctn-credential-backup">Web Authentication: An API for accessing Public Key Credentials Level 3 - Credential Backup State</a>
 /// </remarks>
 public enum CredentialBackupStateRecommendedAction
 {

@@ -4,7 +4,7 @@ using WebAuthn.Net.Services.Common.ClientDataDecoder.Models;
 namespace WebAuthn.Net.Services.Common.ClientDataDecoder;
 
 /// <summary>
-///     Decoder for <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dictionary-client-data">clientData</a> from JSON into a typed representation.
+///     Decoder for <a href="https://www.w3.org/TR/webauthn-3/#dictionary-client-data">clientData</a> from JSON into a typed representation.
 /// </summary>
 public interface IClientDataDecoder
 {

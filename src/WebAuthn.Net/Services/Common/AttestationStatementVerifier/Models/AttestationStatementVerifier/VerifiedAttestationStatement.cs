@@ -15,9 +15,9 @@ public class VerifiedAttestationStatement
     ///     Constructs <see cref="VerifiedAttestationStatement" />.
     /// </summary>
     /// <param name="fmt">
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-statement-format-identifier">Attestation statement format identifier</a>.
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#attestation-statement-format-identifier">Attestation statement format identifier</a>.
     /// </param>
-    /// <param name="attestationType"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-attestation-types">Attestation type</a>, inferred during the verification process of the attestation statement.</param>
+    /// <param name="attestationType"><a href="https://www.w3.org/TR/webauthn-3/#sctn-attestation-types">Attestation type</a>, inferred during the verification process of the attestation statement.</param>
     /// <param name="attestationTrustPath">The attestation trust path - a chain of X509v3 certificates, each serialized to a byte array. Can be <see langword="null" />. If not <see langword="null" />, it's guaranteed to contain one element or more.</param>
     /// <param name="attestationRootCertificates">Root CA X509v3 certificates for validating the chain specified in the attestation trust path. Contains either <see langword="null" /> or a collection with at least one element.</param>
     /// <exception cref="InvalidEnumArgumentException"><paramref name="fmt" /> contains a value that is not defined in <see cref="AttestationStatementFormat" /></exception>
@@ -64,12 +64,12 @@ public class VerifiedAttestationStatement
     }
 
     /// <summary>
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-statement-format-identifier">Attestation statement format identifier</a>.
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#attestation-statement-format-identifier">Attestation statement format identifier</a>.
     /// </summary>
     public AttestationStatementFormat Fmt { get; }
 
     /// <summary>
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-attestation-types">Attestation type</a>, inferred during the verification process of the attestation statement.
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#sctn-attestation-types">Attestation type</a>, inferred during the verification process of the attestation statement.
     /// </summary>
     public AttestationType AttestationType { get; }
 

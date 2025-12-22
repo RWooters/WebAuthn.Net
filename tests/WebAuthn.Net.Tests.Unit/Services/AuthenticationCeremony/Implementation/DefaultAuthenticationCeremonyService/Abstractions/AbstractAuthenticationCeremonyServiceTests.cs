@@ -247,11 +247,7 @@ public abstract class AbstractAuthenticationCeremonyServiceTests
             AuthenticationCeremonyStorage,
             authenticationResponseDecoder,
             clientDataDecoder,
-            attestationObjectDecoder,
             authenticatorDataDecoder,
-            attestationStatementDecoder,
-            attestationStatementVerifier,
-            attestationTrustPathValidator,
             digitalSignatureVerifier,
             AuthenticationCounters,
             NullLogger<DefaultAuthenticationCeremonyService<FakeWebAuthnContext>>.Instance);
