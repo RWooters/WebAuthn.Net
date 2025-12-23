@@ -18,18 +18,18 @@ public class DefaultAttestationStatementDecoder : IAttestationStatementDecoder
     ///     Constructs <see cref="DefaultAttestationStatementDecoder" />.
     /// </summary>
     /// <param name="androidKeyDecoder">
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-key-attestation">Android Key attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-key-attestation">Android Key attestation statement</a> into a typed representation.
     /// </param>
     /// <param name="androidSafetyNetDecoder">
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-safetynet-attestation">Android SafetyNet attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-safetynet-attestation">Android SafetyNet attestation statement</a> into a typed representation.
     /// </param>
     /// <param name="appleAnonymousDecoder">
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-apple-anonymous-attestation">Apple Anonymous attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-apple-anonymous-attestation">Apple Anonymous attestation statement</a> into a typed representation.
     /// </param>
-    /// <param name="fidoU2FDecoder">Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a> into a typed representation.</param>
-    /// <param name="noneDecoder">Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-none-attestation">None attestation statement</a> into a typed representation.</param>
-    /// <param name="packedDecoder">Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation">Packed attestation statement</a> into a typed representation.</param>
-    /// <param name="tpmDecoder">Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-tpm-attestation">TPM attestation statement</a> into a typed representation.</param>
+    /// <param name="fidoU2FDecoder">Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a> into a typed representation.</param>
+    /// <param name="noneDecoder">Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-none-attestation">None attestation statement</a> into a typed representation.</param>
+    /// <param name="packedDecoder">Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation">Packed attestation statement</a> into a typed representation.</param>
+    /// <param name="tpmDecoder">Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-tpm-attestation">TPM attestation statement</a> into a typed representation.</param>
     /// <exception cref="ArgumentNullException">Any of the parameters is <see langword="null" /></exception>
     public DefaultAttestationStatementDecoder(
         IAndroidKeyAttestationStatementDecoder androidKeyDecoder,
@@ -57,37 +57,37 @@ public class DefaultAttestationStatementDecoder : IAttestationStatementDecoder
     }
 
     /// <summary>
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-key-attestation">Android Key attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-key-attestation">Android Key attestation statement</a> into a typed representation.
     /// </summary>
     protected IAndroidKeyAttestationStatementDecoder AndroidKeyDecoder { get; }
 
     /// <summary>
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-safetynet-attestation">Android SafetyNet attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-safetynet-attestation">Android SafetyNet attestation statement</a> into a typed representation.
     /// </summary>
     protected IAndroidSafetyNetAttestationStatementDecoder AndroidSafetyNetDecoder { get; }
 
     /// <summary>
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-apple-anonymous-attestation">Apple Anonymous attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-apple-anonymous-attestation">Apple Anonymous attestation statement</a> into a typed representation.
     /// </summary>
     protected IAppleAnonymousAttestationStatementDecoder AppleAnonymousDecoder { get; }
 
     /// <summary>
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a> into a typed representation.
     /// </summary>
     protected IFidoU2FAttestationStatementDecoder FidoU2FDecoder { get; }
 
     /// <summary>
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-none-attestation">None attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-none-attestation">None attestation statement</a> into a typed representation.
     /// </summary>
     protected INoneAttestationStatementDecoder NoneDecoder { get; }
 
     /// <summary>
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation">Packed attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation">Packed attestation statement</a> into a typed representation.
     /// </summary>
     protected IPackedAttestationStatementDecoder PackedDecoder { get; }
 
     /// <summary>
-    ///     Decoder of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-tpm-attestation">TPM attestation statement</a> into a typed representation.
+    ///     Decoder of <a href="https://www.w3.org/TR/webauthn-3/#sctn-tpm-attestation">TPM attestation statement</a> into a typed representation.
     /// </summary>
     protected ITpmAttestationStatementDecoder TpmDecoder { get; }
 
