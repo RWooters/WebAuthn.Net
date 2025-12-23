@@ -4,8 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 namespace WebAuthn.Net.Services.AuthenticationCeremony.Models.CreateOptions;
 
 /// <summary>
-///     Parameters defining how to form <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dom-publickeycredentialrequestoptions-allowcredentials">allowCredentials</a> in the
-///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dictionary-assertion-options">authentication ceremony options</a>.
+///     Parameters defining how to form <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialrequestoptions-allowcredentials">allowCredentials</a> in the <a href="https://www.w3.org/TR/webauthn-3/#dictionary-assertion-options">authentication ceremony options</a>.
 /// </summary>
 public class AuthenticationCeremonyIncludeCredentials
 {
@@ -30,9 +29,9 @@ public class AuthenticationCeremonyIncludeCredentials
     ///     <para>Include all existing keys.</para>
     ///     <para>It's important that only keys for the current rpId and <see cref="BeginAuthenticationCeremonyRequest.UserHandle" /> will be included.</para>
     ///     <para>
-    ///         If <see cref="BeginAuthenticationCeremonyRequest.UserHandle" /> is not set, then no keys will be included and <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dom-publickeycredentialrequestoptions-allowcredentials">allowCredentials</a> in the resulting
-    ///         <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dictionary-assertion-options">authentication ceremony options</a> will be <see langword="null" />. It's important that in this case the
-    ///         <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#client">client</a> will use only <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#discoverable-credential">discoverable credentials (Passkeys)</a> in the process of the authentication ceremony.
+    ///         If <see cref="BeginAuthenticationCeremonyRequest.UserHandle" /> is not set, then NO keys will be included and <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialrequestoptions-allowcredentials">allowCredentials</a> in the resulting
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dictionary-assertion-options">authentication ceremony options</a> will be <see langword="null" />. It's important that in this case the <a href="https://www.w3.org/TR/webauthn-3/#client">client</a> will use only
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#discoverable-credential">discoverable credentials (Passkeys)</a> in the process of the authentication ceremony.
     ///     </para>
     ///     <para>If this parameter is <see langword="true" />, then the other parameters are ignored.</para>
     /// </summary>
@@ -42,9 +41,9 @@ public class AuthenticationCeremonyIncludeCredentials
     ///     <para>Flag indicating that only manually specified keys need to be included.</para>
     ///     <para>It's important that only keys for the current rpId and <see cref="BeginAuthenticationCeremonyRequest.UserHandle" /> will be included.</para>
     ///     <para>
-    ///         If <see cref="BeginAuthenticationCeremonyRequest.UserHandle" /> is not set, then no keys will be included and <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dom-publickeycredentialrequestoptions-allowcredentials">allowCredentials</a> in the resulting
-    ///         <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dictionary-assertion-options">authentication ceremony options</a> will be <see langword="null" />. It's important that in this case the
-    ///         <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#client">client</a> will use only <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#discoverable-credential">discoverable credentials (Passkeys)</a> in the process of the authentication ceremony.
+    ///         If <see cref="BeginAuthenticationCeremonyRequest.UserHandle" /> is not set, then no keys will be included and <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialrequestoptions-allowcredentials">allowCredentials</a> in the resulting
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#dictionary-assertion-options">authentication ceremony options</a> will be <see langword="null" />. It's important that in this case the <a href="https://www.w3.org/TR/webauthn-3/#client">client</a> will use only
+    ///         <a href="https://www.w3.org/TR/webauthn-3/#discoverable-credential">discoverable credentials (Passkeys)</a> in the process of the authentication ceremony.
     ///     </para>
     ///     <para>If this parameter is <see langword="true" />, then <see cref="ManuallySpecifiedKeysToInclude" /> must not be must not be <see langword="null" /> (it can be an empty array, but not <see langword="null" />).</para>
     ///     <para>It only matters if <see cref="IncludeAllExistingKeys" /> is <see langword="false" />.</para>
@@ -63,9 +62,9 @@ public class AuthenticationCeremonyIncludeCredentials
     /// <summary>
     ///     <para>Creates parameters that indicate that no key descriptors need to be included for the authentication ceremony.</para>
     ///     <para>
-    ///         In this case, <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dom-publickeycredentialrequestoptions-allowcredentials">allowCredentials</a> in the resulting
-    ///         <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dictionary-assertion-options">authentication ceremony options</a> will be <see langword="null" />. This means that the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#client">client</a> will only be
-    ///         able to use <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#discoverable-credential">discoverable credentials (Passkeys)</a> during the authentication ceremony.
+    ///         In this case, <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialrequestoptions-allowcredentials">allowCredentials</a> in the resulting <a href="https://www.w3.org/TR/webauthn-3/#dictionary-assertion-options">authentication ceremony options</a> will be
+    ///         <see langword="null" />. This means that the <a href="https://www.w3.org/TR/webauthn-3/#client">client</a> will only be able to use <a href="https://www.w3.org/TR/webauthn-3/#discoverable-credential">discoverable credentials (Passkeys)</a> during the authentication
+    ///         ceremony.
     ///     </para>
     /// </summary>
     /// <returns>An instance of <see cref="AuthenticationCeremonyIncludeCredentials" />, containing a combination of properties that indicates no key descriptors need to be included for the authentication ceremony.</returns>
