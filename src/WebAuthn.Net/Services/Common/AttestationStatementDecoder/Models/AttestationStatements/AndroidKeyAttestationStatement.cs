@@ -6,19 +6,16 @@ using WebAuthn.Net.Services.Serialization.Cose.Models.Enums;
 namespace WebAuthn.Net.Services.Common.AttestationStatementDecoder.Models.AttestationStatements;
 
 /// <summary>
-///     Decoded <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-key-attestation">Android Key attestation statement</a>.
+///     Decoded <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-key-attestation">Android Key attestation statement</a>.
 /// </summary>
 public class AndroidKeyAttestationStatement : AbstractAttestationStatement
 {
     /// <summary>
     ///     Constructs <see cref="AndroidKeyAttestationStatement" />.
     /// </summary>
-    /// <param name="alg">
-    ///     A <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a> containing the identifier of the algorithm used to generate the
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-signature">attestation signature</a>
-    /// </param>
+    /// <param name="alg">A <a href="https://www.w3.org/TR/webauthn-3/#sctn-alg-identifier">COSEAlgorithmIdentifier</a> containing the identifier of the algorithm used to generate the <a href="https://www.w3.org/TR/webauthn-3/#attestation-signature">attestation signature</a></param>
     /// <param name="sig">
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-signature">Attestation signature</a>
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#attestation-signature">Attestation signature</a>
     /// </param>
     /// <param name="x5C">credCert followed by its certificate chain, in X.509 encoding.</param>
     /// <exception cref="InvalidEnumArgumentException"><paramref name="alg" /> contains a value that is not defined in <see cref="CoseAlgorithm" /></exception>
@@ -51,13 +48,12 @@ public class AndroidKeyAttestationStatement : AbstractAttestationStatement
     }
 
     /// <summary>
-    ///     A <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#typedefdef-cosealgorithmidentifier">COSEAlgorithmIdentifier</a> containing the identifier of the algorithm used to generate the
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-signature">attestation signature</a>
+    ///     A <a href="https://www.w3.org/TR/webauthn-3/#sctn-alg-identifier">COSEAlgorithmIdentifier</a> containing the identifier of the algorithm used to generate the <a href="https://www.w3.org/TR/webauthn-3/#attestation-signature">attestation signature</a>
     /// </summary>
     public CoseAlgorithm Alg { get; }
 
     /// <summary>
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-signature">Attestation signature</a>
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#attestation-signature">Attestation signature</a>
     /// </summary>
     public byte[] Sig { get; }
 
