@@ -8,11 +8,10 @@ using WebAuthn.Net.Services.AuthenticationCeremony.Models.VerifyAssertion;
 namespace WebAuthn.Net.Services.AuthenticationCeremony;
 
 /// <summary>
-///     The service responsible for verifying and processing an <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authentication-assertion">authentication assertion</a>
-///     to perform the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authentication-ceremony">authentication ceremony</a>.
+///     The service responsible for verifying and processing an <a href="https://www.w3.org/TR/webauthn-3/#authentication-assertion">authentication assertion</a> to perform the <a href="https://www.w3.org/TR/webauthn-3/#authentication-ceremony">authentication ceremony</a>.
 /// </summary>
 /// <remarks>
-///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-verifying-assertion">Web Authentication: An API for accessing Public Key Credentials Level 3 - §7.2. Verifying an Authentication Assertion</a>
+///     <a href="https://www.w3.org/TR/webauthn-3/#sctn-verifying-assertion">Web Authentication: An API for accessing Public Key Credentials Level 3 - Verifying an Authentication Assertion</a>
 /// </remarks>
 public interface IAuthenticationCeremonyService
 {
