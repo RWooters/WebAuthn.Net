@@ -8,21 +8,18 @@ namespace WebAuthn.Net.Services.Common.AuthenticatorDataDecoder.Models;
 ///     Authenticator Data (which has attestedCredentialData).
 /// </summary>
 /// <remarks>
-///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Web Authentication: An API for accessing Public Key Credentials Level 3 - §6.1. Authenticator Data</a>
+///     <a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Web Authentication: An API for accessing Public Key Credentials Level 3 - Authenticator Data</a>
 /// </remarks>
 public class AttestedAuthenticatorData : AbstractAuthenticatorData
 {
     /// <summary>
     ///     Constructs <see cref="AttestedAuthenticatorData" />.
     /// </summary>
-    /// <param name="raw">Raw <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">authenticator data</a> value.</param>
-    /// <param name="rpIdHash">
-    ///     SHA-256 hash of the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#rp-id">RP ID</a> the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#public-key-credential">credential</a> is
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#scope">scoped</a> to.
-    /// </param>
-    /// <param name="flags"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Authenticator data</a> <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-flags">flags</a>.</param>
-    /// <param name="signCount"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#signature-counter">Signature counter</a>, 32-bit unsigned integer.</param>
-    /// <param name="attestedCredentialData"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attested-credential-data">Attested credential data</a> (if present).</param>
+    /// <param name="raw">Raw <a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">authenticator data</a> value.</param>
+    /// <param name="rpIdHash">SHA-256 hash of the <a href="https://www.w3.org/TR/webauthn-3/#rp-id">RP ID</a> the <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential">credential</a> is <a href="https://www.w3.org/TR/webauthn-3/#scope">scoped</a> to.</param>
+    /// <param name="flags"><a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Authenticator data</a> <a href="https://www.w3.org/TR/webauthn-3/#authdata-flags">flags</a>.</param>
+    /// <param name="signCount"><a href="https://www.w3.org/TR/webauthn-3/#sctn-sign-counter">Signature counter</a>, 32-bit unsigned integer.</param>
+    /// <param name="attestedCredentialData"><a href="https://www.w3.org/TR/webauthn-3/#attested-credential-data">Attested credential data</a>.</param>
     /// <exception cref="ArgumentNullException"><paramref name="raw" /> is <see langword="null" /></exception>
     /// <exception cref="ArgumentNullException"><paramref name="rpIdHash" /> is <see langword="null" /></exception>
     /// <exception cref="ArgumentException">The length of <paramref name="rpIdHash" /> is not equal to 32</exception>
@@ -73,7 +70,7 @@ public class AttestedAuthenticatorData : AbstractAuthenticatorData
     public override uint SignCount { get; }
 
     /// <summary>
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attested-credential-data">Attested credential data</a> (if present).
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#attested-credential-data">Attested credential data</a>.
     /// </summary>
     public AttestedCredentialData AttestedCredentialData { get; }
 }

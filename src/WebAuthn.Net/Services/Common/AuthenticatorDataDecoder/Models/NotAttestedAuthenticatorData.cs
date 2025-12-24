@@ -8,20 +8,17 @@ namespace WebAuthn.Net.Services.Common.AuthenticatorDataDecoder.Models;
 ///     Authenticator Data (which does not have attestedCredentialData).
 /// </summary>
 /// <remarks>
-///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Web Authentication: An API for accessing Public Key Credentials Level 3 - §6.1. Authenticator Data</a>
+///     <a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Web Authentication: An API for accessing Public Key Credentials Level 3 - Authenticator Data</a>
 /// </remarks>
 public class NotAttestedAuthenticatorData : AbstractAuthenticatorData
 {
     /// <summary>
     ///     Constructs <see cref="NotAttestedAuthenticatorData" />.
     /// </summary>
-    /// <param name="raw">Raw <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">authenticator data</a> value.</param>
-    /// <param name="rpIdHash">
-    ///     SHA-256 hash of the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#rp-id">RP ID</a> the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#public-key-credential">credential</a> is
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#scope">scoped</a> to.
-    /// </param>
-    /// <param name="flags"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Authenticator data</a> <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-flags">flags</a>.</param>
-    /// <param name="signCount"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#signature-counter">Signature counter</a>, 32-bit unsigned integer.</param>
+    /// <param name="raw">Raw <a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">authenticator data</a> value.</param>
+    /// <param name="rpIdHash">SHA-256 hash of the <a href="https://www.w3.org/TR/webauthn-3/#rp-id">RP ID</a> the <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential">credential</a> is <a href="https://www.w3.org/TR/webauthn-3/#scope">scoped</a> to.</param>
+    /// <param name="flags"><a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Authenticator data</a> <a href="https://www.w3.org/TR/webauthn-3/#authdata-flags">flags</a>.</param>
+    /// <param name="signCount"><a href="https://www.w3.org/TR/webauthn-3/#sctn-sign-counter">Signature counter</a>, 32-bit unsigned integer.</param>
     /// <exception cref="ArgumentNullException"><paramref name="raw" /> is <see langword="null" /></exception>
     /// <exception cref="ArgumentNullException"><paramref name="rpIdHash" /> is <see langword="null" /></exception>
     /// <exception cref="ArgumentException">The length of <paramref name="rpIdHash" /> is not equal to 32</exception>

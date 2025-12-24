@@ -11,7 +11,10 @@ public class DefaultChallengeGenerator : IChallengeGenerator
     /// <inheritdoc />
     public virtual byte[] GenerateChallenge(int size)
     {
-        // https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-cryptographic-challenges
+        // https://www.w3.org/TR/webauthn-3/#sctn-cryptographic-challenges
+        // In order to prevent replay attacks,
+        // the challenges MUST contain enough entropy to make guessing them infeasible.
+        // Challenges SHOULD therefore be at least 16 bytes long.
         if (size < 16)
         {
             throw new ArgumentException($"The minimum value of {nameof(size)} is 16.", nameof(size));
