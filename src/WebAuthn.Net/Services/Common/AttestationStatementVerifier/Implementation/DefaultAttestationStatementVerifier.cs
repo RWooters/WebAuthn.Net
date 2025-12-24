@@ -32,19 +32,13 @@ public class DefaultAttestationStatementVerifier<TContext> : IAttestationStateme
     /// <summary>
     ///     Constructs <see cref="DefaultAttestationStatementVerifier{TContext}" />.
     /// </summary>
-    /// <param name="packedVerifier">Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation">Packed attestation statement</a>.</param>
-    /// <param name="tpmVerifier">Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-tpm-attestation">TPM attestation statement</a>.</param>
-    /// <param name="androidKeyVerifier">
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-key-attestation">Android Key attestation statement</a>.
-    /// </param>
-    /// <param name="androidSafetyNetVerifier">
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-safetynet-attestation">Android SafetyNet attestation statement</a>.
-    /// </param>
-    /// <param name="fidoU2FVerifier">Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a>.</param>
-    /// <param name="noneVerifier">Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-none-attestation">None attestation statement</a>.</param>
-    /// <param name="appleAnonymousVerifier">
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-apple-anonymous-attestation">Apple Anonymous attestation statement</a>.
-    /// </param>
+    /// <param name="packedVerifier">Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation">Packed attestation statement</a>.</param>
+    /// <param name="tpmVerifier">Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-tpm-attestation">TPM attestation statement</a>.</param>
+    /// <param name="androidKeyVerifier">Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-key-attestation">Android Key attestation statement</a>.</param>
+    /// <param name="androidSafetyNetVerifier">Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-safetynet-attestation">Android SafetyNet attestation statement</a>.</param>
+    /// <param name="fidoU2FVerifier">Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a>.</param>
+    /// <param name="noneVerifier">Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-none-attestation">None attestation statement</a>.</param>
+    /// <param name="appleAnonymousVerifier">Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-apple-anonymous-attestation">Apple Anonymous attestation statement</a>.</param>
     /// <param name="logger">Logger.</param>
     /// <exception cref="ArgumentNullException">Any of the parameters is <see langword="null" /></exception>
     public DefaultAttestationStatementVerifier(
@@ -76,37 +70,37 @@ public class DefaultAttestationStatementVerifier<TContext> : IAttestationStateme
     }
 
     /// <summary>
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation">Packed attestation statement</a>.
+    ///     Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation">Packed attestation statement</a>.
     /// </summary>
     protected IPackedAttestationStatementVerifier<TContext> PackedVerifier { get; }
 
     /// <summary>
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-tpm-attestation">TPM attestation statement</a>.
+    ///     Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-tpm-attestation">TPM attestation statement</a>.
     /// </summary>
     protected ITpmAttestationStatementVerifier<TContext> TpmVerifier { get; }
 
     /// <summary>
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-key-attestation">Android Key attestation statement</a>.
+    ///     Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-key-attestation">Android Key attestation statement</a>.
     /// </summary>
     protected IAndroidKeyAttestationStatementVerifier<TContext> AndroidKeyVerifier { get; }
 
     /// <summary>
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-android-safetynet-attestation">Android SafetyNet attestation statement</a>.
+    ///     Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-android-safetynet-attestation">Android SafetyNet attestation statement</a>.
     /// </summary>
     protected IAndroidSafetyNetAttestationStatementVerifier<TContext> AndroidSafetyNetVerifier { get; }
 
     /// <summary>
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a>.
+    ///     Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a>.
     /// </summary>
     protected IFidoU2FAttestationStatementVerifier<TContext> FidoU2FVerifier { get; }
 
     /// <summary>
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-none-attestation">None attestation statement</a>.
+    ///     Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-none-attestation">None attestation statement</a>.
     /// </summary>
     protected INoneAttestationStatementVerifier<TContext> NoneVerifier { get; }
 
     /// <summary>
-    ///     Verifier of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-apple-anonymous-attestation">Apple Anonymous attestation statement</a>.
+    ///     Verifier of <a href="https://www.w3.org/TR/webauthn-3/#sctn-apple-anonymous-attestation">Apple Anonymous attestation statement</a>.
     /// </summary>
     protected IAppleAnonymousAttestationStatementVerifier<TContext> AppleAnonymousVerifier { get; }
 
@@ -218,7 +212,7 @@ public static partial class DefaultAttestationStatementVerifierLoggingExtensions
     /// <param name="logger">Logger</param>
     /// <param name="attStmtType">The .NET type into which the attestation statement was serialized</param>
     /// <param name="fmt">
-    ///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-statement-format-identifier">Attestation statement format identifier</a>.
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#attestation-statement-format-identifier">Attestation statement format identifier</a>.
     /// </param>
     [LoggerMessage(
         Level = LogLevel.Warning,
