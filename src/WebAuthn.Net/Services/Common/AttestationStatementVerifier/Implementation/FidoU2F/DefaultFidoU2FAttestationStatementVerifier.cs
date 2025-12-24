@@ -76,8 +76,8 @@ public class DefaultFidoU2FAttestationStatementVerifier<TContext>
         byte[] clientDataHash,
         CancellationToken cancellationToken)
     {
-        // https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-fido-u2f-attestation
-        // §8.6. FIDO U2F Attestation Statement Format
+        // https://www.w3.org/TR/webauthn-3/#sctn-fido-u2f-attestation
+        // "FIDO U2F Attestation Statement Format"
 
         ArgumentNullException.ThrowIfNull(attStmt);
         ArgumentNullException.ThrowIfNull(authenticatorData);
@@ -177,14 +177,14 @@ public class DefaultFidoU2FAttestationStatementVerifier<TContext>
     }
 
     /// <summary>
-    ///     Returns the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-attestation-types">attestation type</a> of the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a>.
+    ///     Returns the <a href="https://www.w3.org/TR/webauthn-3/#sctn-attestation-types">attestation type</a> of the <a href="https://www.w3.org/TR/webauthn-3/#sctn-fido-u2f-attestation">FIDO U2F attestation statement</a>.
     /// </summary>
     /// <param name="context">The context in which the WebAuthn operation is performed.</param>
     /// <param name="attCert">Attestation certificate in the x509v3 format.</param>
-    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
+    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/webauthn-3/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
     /// <param name="cancellationToken">Cancellation token for an asynchronous operation.</param>
     /// <returns>
-    ///     If the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-attestation-types">attestation type</a> was successfully determined and a list of Root CA certificates was obtained, the result contains a <see cref="FidoU2FAttestationTypeResult" />. Otherwise, the
+    ///     If the <a href="https://www.w3.org/TR/webauthn-3/#sctn-attestation-types">attestation type</a> was successfully determined and a list of Root CA certificates was obtained, the result contains a <see cref="FidoU2FAttestationTypeResult" />. Otherwise, the
     ///     result indicates that an error occurred during the execution of this operation.
     /// </returns>
     protected virtual async Task<Result<FidoU2FAttestationTypeResult>> GetAttestationTypeAsync(
@@ -224,7 +224,7 @@ public class DefaultFidoU2FAttestationStatementVerifier<TContext>
     /// </summary>
     /// <param name="context">The context in which the WebAuthn operation is performed.</param>
     /// <param name="attCert">Attestation certificate in the x509v3 format.</param>
-    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
+    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/webauthn-3/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
     /// <param name="cancellationToken">Cancellation token for an asynchronous operation.</param>
     /// <returns>If data was found, the result contains a <see cref="FidoMetadataResult" />. Otherwise, the result indicates that the data was not found or an error occurred during the process.</returns>
     protected virtual async Task<Result<FidoMetadataResult>> FindFidoMetadataAsync(
