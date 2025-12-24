@@ -139,9 +139,9 @@ public class DefaultAttestationTrustPathValidator : IAttestationTrustPathValidat
     }
 
     /// <summary>
-    ///     Validates the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-trust-path">attestation trust path</a>
+    ///     Validates the <a href="https://www.w3.org/TR/webauthn-3/#attestation-trust-path">attestation trust path</a>
     /// </summary>
-    /// <param name="attestationTrustPath"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-trust-path">Attestation trust path</a>, containing a certificate chain that needs to be validated.</param>
+    /// <param name="attestationTrustPath"><a href="https://www.w3.org/TR/webauthn-3/#attestation-trust-path">Attestation trust path</a>, containing a certificate chain that needs to be validated.</param>
     /// <param name="attestationRootCertificates">Root CA certificates, one of which should fit for the verification of the certificate chain specified in the <paramref name="attestationTrustPath" /></param>
     /// <returns><see langword="true" /> if the certificate chain from <paramref name="attestationTrustPath" /> is successfully validated by one of the Root CA certificates specified in <paramref name="attestationRootCertificates" />, otherwise - <see langword="false" />.</returns>
     [SuppressMessage("ReSharper", "ConditionalAccessQualifierIsNonNullableAccordingToAPIContract")]

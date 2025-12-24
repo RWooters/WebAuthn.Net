@@ -357,7 +357,7 @@ public static partial class DefaultAuthenticatorDataDecoderLoggingExtensions
     ///     'attestedCredentialData.credentialIdLength' is {CredentialIdLength}, which is greater than the maximum limit of 1023
     /// </summary>
     /// <param name="logger">Logger</param>
-    /// <param name="credentialIdLength">The <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-attestedcredentialdata-credentialidlength">'attestedCredentialData.credentialIdLength'</a> value.</param>
+    /// <param name="credentialIdLength">The <a href="https://www.w3.org/TR/webauthn-3/#authdata-attestedcredentialdata-credentialidlength">'attestedCredentialData.credentialIdLength'</a> value.</param>
     [LoggerMessage(
         Level = LogLevel.Warning,
         Message = "'attestedCredentialData.credentialIdLength' is {CredentialIdLength}, which is greater than the maximum limit of 1023")]
