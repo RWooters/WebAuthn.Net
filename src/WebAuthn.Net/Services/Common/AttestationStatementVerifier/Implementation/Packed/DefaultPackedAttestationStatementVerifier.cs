@@ -84,8 +84,8 @@ public class DefaultPackedAttestationStatementVerifier<TContext> :
         byte[] clientDataHash,
         CancellationToken cancellationToken)
     {
-        // https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation
-        // §8.2. Packed Attestation Statement Format
+        // https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation
+        // "Packed Attestation Statement Format"
 
         ArgumentNullException.ThrowIfNull(attStmt);
         cancellationToken.ThrowIfCancellationRequested();
@@ -163,11 +163,11 @@ public class DefaultPackedAttestationStatementVerifier<TContext> :
     ///     Performs verification steps according to the WebAuthn specification for the case when x5c is specified.
     /// </summary>
     /// <param name="context">The context in which the WebAuthn operation is performed.</param>
-    /// <param name="attStmt">Decoded <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation">Packed attestation statement</a>.</param>
-    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
-    /// <param name="clientDataHash">SHA256 hash of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dom-authenticatorresponse-clientdatajson">clientDataJSON</a>.</param>
-    /// <param name="certificates"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-trust-path">Attestation trust path</a> as a readonly collection of <see cref="X509Certificate2" />.</param>
-    /// <param name="trustPath">Raw <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-trust-path">attestation trust path</a> as an array of byte arrays containing x509v3 certificates.</param>
+    /// <param name="attStmt">Decoded <a href="https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation">Packed attestation statement</a>.</param>
+    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/webauthn-3/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
+    /// <param name="clientDataHash">SHA256 hash of <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorresponse-clientdatajson">clientDataJSON</a>.</param>
+    /// <param name="certificates"><a href="https://www.w3.org/TR/webauthn-3/#attestation-trust-path">Attestation trust path</a> as a readonly collection of <see cref="X509Certificate2" />.</param>
+    /// <param name="trustPath">Raw <a href="https://www.w3.org/TR/webauthn-3/#attestation-trust-path">attestation trust path</a> as an array of byte arrays containing x509v3 certificates.</param>
     /// <param name="cancellationToken">Cancellation token for an asynchronous operation.</param>
     /// <returns>If the verification is successful - the result containing <see cref="VerifiedAttestationStatement" />, otherwise - the result indicating that the validation has failed.</returns>
     [SuppressMessage("ReSharper", "ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract")]
@@ -232,15 +232,15 @@ public class DefaultPackedAttestationStatementVerifier<TContext> :
     }
 
     /// <summary>
-    ///     Returns the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-attestation-types">attestation type</a> of the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation">Packed attestation statement</a>.
+    ///     Returns the <a href="https://www.w3.org/TR/webauthn-3/#sctn-attestation-types">attestation type</a> of the <a href="https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation">Packed attestation statement</a>.
     /// </summary>
     /// <param name="context">The context in which the WebAuthn operation is performed.</param>
     /// <param name="attestnCert">Attestation certificate in the x509v3 format.</param>
-    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
+    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/webauthn-3/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
     /// <param name="cancellationToken">Cancellation token for an asynchronous operation.</param>
     /// <returns>
-    ///     If the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-attestation-types">attestation type</a> was successfully determined and a list of Root CA certificates was obtained, the result contains a <see cref="FidoPackedAttestationTypeResult" />. Otherwise,
-    ///     the result indicates that an error occurred during the execution of this operation.
+    ///     If the <a href="https://www.w3.org/TR/webauthn-3/#sctn-attestation-types">attestation type</a> was successfully determined and a list of Root CA certificates was obtained, the result contains a <see cref="FidoPackedAttestationTypeResult" />. Otherwise, the result
+    ///     indicates that an error occurred during the execution of this operation.
     /// </returns>
     protected virtual async Task<Result<FidoPackedAttestationTypeResult>> GetAttestationTypeAsync(
         TContext context,
@@ -286,9 +286,9 @@ public class DefaultPackedAttestationStatementVerifier<TContext> :
     /// <summary>
     ///     Performs verification steps according to the WebAuthn specification for the case when x5c is not specified.
     /// </summary>
-    /// <param name="attStmt">Decoded <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation">Packed attestation statement</a>.</param>
-    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
-    /// <param name="clientDataHash">SHA256 hash of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dom-authenticatorresponse-clientdatajson">clientDataJSON</a>.</param>
+    /// <param name="attStmt">Decoded <a href="https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation">Packed attestation statement</a>.</param>
+    /// <param name="authenticatorData"><a href="https://www.w3.org/TR/webauthn-3/#sctn-authenticator-data">Authenticator data</a> that has <a href="https://www.w3.org/TR/webauthn-3/#authdata-attestedcredentialdata">attestedCredentialData</a>.</param>
+    /// <param name="clientDataHash">SHA256 hash of <a href="https://www.w3.org/TR/webauthn-3/#dom-authenticatorresponse-clientdatajson">clientDataJSON</a>.</param>
     /// <returns>If the verification is successful - the result containing <see cref="VerifiedAttestationStatement" />, otherwise - the result indicating that the validation has failed.</returns>
     [SuppressMessage("ReSharper", "ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract")]
     protected virtual Result<VerifiedAttestationStatement> VerifyPackedWithoutX5C(
@@ -338,7 +338,7 @@ public class DefaultPackedAttestationStatementVerifier<TContext> :
     protected virtual bool IsAttestnCertValid(X509Certificate2 attestnCert, out Guid? aaguid)
     {
         // §8.2.1 Packed Attestation Statement Certificate Requirements.
-        // https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-packed-attestation-cert-requirements
+        // https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation-cert-requirements
 
         if (attestnCert is null)
         {
