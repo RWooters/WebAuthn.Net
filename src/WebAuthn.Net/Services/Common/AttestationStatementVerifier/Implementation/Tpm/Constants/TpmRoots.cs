@@ -8,7 +8,7 @@ using WebAuthn.Net.Services.Static;
 namespace WebAuthn.Net.Services.Common.AttestationStatementVerifier.Implementation.Tpm.Constants;
 
 /// <summary>
-///     Embedded root certificates for the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-tpm-attestation">TPM attestation statement</a>.
+///     Embedded root certificates for the <a href="https://www.w3.org/TR/webauthn-3/#sctn-tpm-attestation">TPM attestation statement</a>.
 /// </summary>
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 public static class TpmRoots
