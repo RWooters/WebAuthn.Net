@@ -805,9 +805,9 @@ public class DefaultRegistrationCeremonyService<TContext>
     /// </summary>
     /// <param name="credential">PublicKeyCredential. The response received from the authenticator during the registration ceremony.</param>
     /// <param name="authData">Authenticator Data (which has attestedCredentialData).</param>
-    /// <param name="uvInitialized">The value of the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-flags-uv">user verified (UV)</a> flag in authData.</param>
-    /// <param name="backupEligible">The value of the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-flags-be">backup eligibility (BE)</a> flag in authData.</param>
-    /// <param name="backupState">The value of the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authdata-flags-bs">backup state (BS)</a> flag in authData.</param>
+    /// <param name="uvInitialized">The value of the <a href="https://www.w3.org/TR/webauthn-3/#authdata-flags-uv">user verified (UV)</a> flag in authData.</param>
+    /// <param name="backupEligible">The value of the <a href="https://www.w3.org/TR/webauthn-3/#authdata-flags-be">backup eligibility (BE)</a> flag in authData.</param>
+    /// <param name="backupState">The value of the <a href="https://www.w3.org/TR/webauthn-3/#authdata-flags-bs">backup state (BS)</a> flag in authData.</param>
     /// <param name="response">Information about Public Key Credential</param>
     /// <returns>Instance of <see cref="CredentialRecord" />.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="credential" /> is <see langword="null" /></exception>
@@ -898,10 +898,10 @@ public class DefaultRegistrationCeremonyService<TContext>
     /// <param name="registrationCeremonyParameters">Registration ceremony parameters.</param>
     /// <param name="request">Request containing parameters for completing the registration ceremony.</param>
     /// <param name="credentialRecord"><see cref="CredentialRecord" /> that stores the properties of the registered public key.</param>
-    /// <param name="attestationObject">Decoded <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-object">attestation object</a>.</param>
-    /// <param name="authData">Decoded value of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#authenticator-data">authenticator data (authData)</a>.</param>
-    /// <param name="attStmt">Decoded value of <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-statement">attestation statement (attStmt)</a>.</param>
-    /// <param name="verifiedAttestationStatement">Verified value of the <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#attestation-statement">attestation statement (attStmt)</a>.</param>
+    /// <param name="attestationObject">Decoded <a href="https://www.w3.org/TR/webauthn-3/#attestation-object">attestation object</a>.</param>
+    /// <param name="authData">Decoded value of <a href="https://www.w3.org/TR/webauthn-3/#authenticator-data">authenticator data (authData)</a>.</param>
+    /// <param name="attStmt">Decoded value of <a href="https://www.w3.org/TR/webauthn-3/#attestation-statement">attestation statement (attStmt)</a>.</param>
+    /// <param name="verifiedAttestationStatement">Verified value of the <a href="https://www.w3.org/TR/webauthn-3/#attestation-statement">attestation statement (attStmt)</a>.</param>
     /// <param name="cancellationToken">Cancellation token for an asynchronous operation.</param>
     /// <returns>Instance of <see cref="UserCredentialRecord" />.</returns>
     /// <exception cref="ArgumentNullException">Any of the parameters is <see langword="null" /></exception>
