@@ -8,10 +8,10 @@ using WebAuthn.Net.Services.RegistrationCeremony.Models.CreateOptions;
 namespace WebAuthn.Net.Services.RegistrationCeremony;
 
 /// <summary>
-///     The service responsible for <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#registration-ceremony">creating a public key credential and associating it with a user account</a>.
+///     The service responsible for <a href="https://www.w3.org/TR/webauthn-3/#registration-ceremony">creating a public key credential and associating it with a user account</a>.
 /// </summary>
 /// <remarks>
-///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#sctn-registering-a-new-credential">Web Authentication: An API for accessing Public Key Credentials Level 3 - §7.1. Registering a New Credential</a>
+///     <a href="https://www.w3.org/TR/webauthn-3/#sctn-registering-a-new-credential">Web Authentication: An API for accessing Public Key Credentials Level 3 - Registering a New Credential</a>
 /// </remarks>
 public interface IRegistrationCeremonyService
 {
