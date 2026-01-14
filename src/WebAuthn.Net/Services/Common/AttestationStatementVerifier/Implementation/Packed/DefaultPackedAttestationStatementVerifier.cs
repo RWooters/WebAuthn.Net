@@ -198,7 +198,9 @@ public class DefaultPackedAttestationStatementVerifier<TContext> :
             return Result<VerifiedAttestationStatement>.Fail();
         }
 
-        // 2) Verify that 'attestnCert' meets the requirements in §8.2.1 Packed Attestation Statement Certificate Requirements.
+        // 2) Verify that 'attestnCert' meets the requirements in
+        // "Certificate Requirements for Packed Attestation Statements"
+        // https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation-cert-requirements
         if (!IsAttestnCertValid(attestnCert, out var aaguid))
         {
             return Result<VerifiedAttestationStatement>.Fail();
@@ -337,7 +339,7 @@ public class DefaultPackedAttestationStatementVerifier<TContext> :
     [SuppressMessage("ReSharper", "ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract")]
     protected virtual bool IsAttestnCertValid(X509Certificate2 attestnCert, out Guid? aaguid)
     {
-        // §8.2.1 Packed Attestation Statement Certificate Requirements.
+        // "Certificate Requirements for Packed Attestation Statements"
         // https://www.w3.org/TR/webauthn-3/#sctn-packed-attestation-cert-requirements
 
         if (attestnCert is null)

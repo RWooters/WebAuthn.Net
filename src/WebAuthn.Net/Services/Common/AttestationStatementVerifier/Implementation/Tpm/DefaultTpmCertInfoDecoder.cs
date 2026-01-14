@@ -77,8 +77,8 @@ public class DefaultTpmCertInfoDecoder : ITpmCertInfoDecoder
         }
 
         var type = BinaryPrimitives.ReadUInt16BigEndian(rawType);
+        // "TPM Attestation Statement Format"
         // https://www.w3.org/TR/webauthn-3/#sctn-tpm-attestation
-        // §8.3. TPM Attestation Statement Format
         // Validate that certInfo is valid:
         // 2) Verify that type is set to TPM_ST_ATTEST_CERTIFY.
         if (type != 0x8017)

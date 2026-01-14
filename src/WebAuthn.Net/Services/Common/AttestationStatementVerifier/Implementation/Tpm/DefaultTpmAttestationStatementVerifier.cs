@@ -199,8 +199,9 @@ public class DefaultTpmAttestationStatementVerifier<TContext> : ITpmAttestationS
             return Result<VerifiedAttestationStatement>.Fail();
         }
 
+        // "TPM Attestation Statement Format"
         // https://www.w3.org/TR/webauthn-3/#sctn-tpm-attestation
-        // §8.3. TPM Attestation Statement Format
+
         // Validate that certInfo is valid:
         // 1) Verify that 'magic' is set to TPM_GENERATED_VALUE.
         // Handled in CertInfo.TryParse
@@ -285,7 +286,8 @@ public class DefaultTpmAttestationStatementVerifier<TContext> : ITpmAttestationS
                 return Result<VerifiedAttestationStatement>.Fail();
             }
 
-            // 8) Verify that aikCert meets the requirements in §8.3.1 TPM Attestation Statement Certificate Requirements.
+            // 8) Verify that aikCert meets the requirements in "TPM Attestation Statement Certificate Requirements"
+            // https://www.w3.org/TR/webauthn-3/#sctn-tpm-cert-requirements
             if (!IsTpmAttestationStatementCertificateRequirementsSatisfied(aikCert, out var manufacturerRootCertificates))
             {
                 return Result<VerifiedAttestationStatement>.Fail();
@@ -422,8 +424,8 @@ public class DefaultTpmAttestationStatementVerifier<TContext> : ITpmAttestationS
             return false;
         }
 
+        // "TPM Attestation Statement Certificate Requirements"
         // https://www.w3.org/TR/webauthn-3/#sctn-tpm-cert-requirements
-        // §8.3.1. TPM Attestation Statement Certificate Requirements
         // TPM attestation certificate MUST have the following fields/extensions:
         // 1) Version MUST be set to 3.
         if (aikCert.Version != 3)
