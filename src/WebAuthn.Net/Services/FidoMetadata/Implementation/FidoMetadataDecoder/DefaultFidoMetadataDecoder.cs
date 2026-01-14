@@ -571,6 +571,7 @@ public class DefaultFidoMetadataDecoder : IFidoMetadataDecoder
         result = new(
             baDesc.SelfAttestedFRR,
             baDesc.SelfAttestedFAR,
+            baDesc.IaparThreshold,
             baDesc.MaxTemplates,
             baDesc.MaxRetries,
             baDesc.BlockSlowdown);
