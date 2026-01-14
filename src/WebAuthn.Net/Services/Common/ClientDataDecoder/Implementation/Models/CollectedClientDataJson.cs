@@ -29,7 +29,7 @@ public class CollectedClientDataJson
     /// <param name="crossOrigin">This OPTIONAL member contains the inverse of the "sameOriginWithAncestors" argument value that was passed into the <a href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal method</a>.</param>
     /// <param name="topOrigin">
     ///     This OPTIONAL member contains the fully qualified <a href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-environment-top-level-origin">top-level origin</a> of the requester, in the syntax defined by
-    ///     <a href="https://www.rfc-editor.org/rfc/rfc6454.html">[RFC6454]</a>. It is set only if the call was made from context that is not <a href="https://w3c.github.io/webappsec-credential-management/#same-origin-with-its-ancestors">same-origin with its ancestors</a>, i.e. if
+    ///     <a href="https://www.rfc-editor.org/rfc/rfc6454.html">[RFC6454]</a>. It is set only if the call was made from context that is not <a href="https://www.w3.org/TR/credential-management-1/#same-origin-with-its-ancestors">same-origin with its ancestors</a>, i.e. if
     ///     <a href="https://www.w3.org/TR/webauthn-3/#dom-collectedclientdata-crossorigin">crossOrigin</a> is <see langword="true" />.
     /// </param>
     [JsonConstructor]
@@ -83,7 +83,7 @@ public class CollectedClientDataJson
 
     /// <summary>
     ///     This OPTIONAL member contains the fully qualified <a href="https://html.spec.whatwg.org/multipage/webappapis.html#concept-environment-top-level-origin">top-level origin</a> of the requester, in the syntax defined by
-    ///     <a href="https://www.rfc-editor.org/rfc/rfc6454.html">[RFC6454]</a>. It is set only if the call was made from context that is not <a href="https://w3c.github.io/webappsec-credential-management/#same-origin-with-its-ancestors">same-origin with its ancestors</a>, i.e. if
+    ///     <a href="https://www.rfc-editor.org/rfc/rfc6454.html">[RFC6454]</a>. It is set only if the call was made from context that is not <a href="https://www.w3.org/TR/credential-management-1/#same-origin-with-its-ancestors">same-origin with its ancestors</a>, i.e. if
     ///     <a href="https://www.w3.org/TR/webauthn-3/#dom-collectedclientdata-crossorigin">crossOrigin</a> is <see langword="true" />.
     /// </summary>
     [JsonPropertyName("topOrigin")]
