@@ -5,8 +5,7 @@ using WebAuthn.Net.Models.Protocol.RegistrationCeremony.CreateOptions;
 namespace WebAuthn.Net.Services.RegistrationCeremony.Models.CreateOptions;
 
 /// <summary>
-///     Parameters defining how to form <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dom-publickeycredentialcreationoptions-excludecredentials">excludeCredentials</a> in the
-///     <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dictionary-makecredentialoptions">registration ceremony options</a>.
+///     Parameters defining how to form <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialcreationoptions-excludecredentials">excludeCredentials</a> in the <a href="https://www.w3.org/TR/webauthn-3/#dictionary-makecredentialoptions">registration ceremony options</a>.
 /// </summary>
 public class RegistrationCeremonyExcludeCredentials
 {
@@ -53,8 +52,8 @@ public class RegistrationCeremonyExcludeCredentials
     /// <summary>
     ///     <para>Creates parameters indicating that no exclusion of any key descriptors is required for the registration ceremony.</para>
     ///     <para>
-    ///         In this case, <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dom-publickeycredentialcreationoptions-excludecredentials">excludeCredentials</a> in the resulting
-    ///         <a href="https://www.w3.org/TR/2023/WD-webauthn-3-20230927/#dictionary-makecredentialoptions">registration ceremony options</a> will be <see langword="null" />.
+    ///         In this case, <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialcreationoptions-excludecredentials">excludeCredentials</a> in the resulting <a href="https://www.w3.org/TR/webauthn-3/#dictionary-makecredentialoptions">registration ceremony options</a>
+    ///         will be <see langword="null" />.
     ///     </para>
     /// </summary>
     /// <returns>An instance of <see cref="RegistrationCeremonyExcludeCredentials" />, containing such a combination of properties that indicates no exclusion of any key descriptors is required for the registration ceremony.</returns>
