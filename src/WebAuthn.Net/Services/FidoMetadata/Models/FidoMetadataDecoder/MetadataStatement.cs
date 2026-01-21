@@ -8,9 +8,7 @@ namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder;
 ///     Metadata Statement
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.0-ps-20210518.html#metadata-keys">FIDO Metadata Statement - §4. Metadata Keys</a>
-///     </para>
+///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-md-keys">FIDO Metadata Statement - Metadata Keys</a>
 /// </remarks>
 public class MetadataStatement
 {
