@@ -1,6 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
 using Polly;
-using WebAuthn.Net.Demo.FidoConformance.Middleware;
 using WebAuthn.Net.Demo.FidoConformance.Services;
 using WebAuthn.Net.Demo.FidoConformance.Services.ConformanceMetadata;
 using WebAuthn.Net.Models;
@@ -21,7 +20,7 @@ public static class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        builder.Services.AddSingleton<RequestLoggingMiddleware>();
+        //builder.Services.AddSingleton<RequestLoggingMiddleware>();
         builder.Services.AddSingleton<LocalFilesFidoMetadataHttpClientDelegatingHandler>();
 
         // Add services to the container.
@@ -150,7 +149,7 @@ public static class Program
         // --------------------------
         var app = builder.Build();
         app.Logger.Log(LogLevel.Critical, "Application started!");
-        app.UseMiddleware<RequestLoggingMiddleware>();
+        //app.UseMiddleware<RequestLoggingMiddleware>();
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
