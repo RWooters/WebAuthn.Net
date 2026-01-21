@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using WebAuthn.Net.Models.Protocol.RegistrationCeremony.CreateOptions;
 
 namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder;
 
@@ -110,7 +109,7 @@ public class AuthenticatorGetInfo
         ulong? maxCredentialCountInList,
         ulong? maxCredentialIdLength,
         string[]? transports,
-        PublicKeyCredentialParameters[]? algorithms,
+        FidoPublicKeyCredentialParameters[]? algorithms,
         ulong? maxSerializedLargeBlobArray,
         bool? forcePinChange,
         ulong? minPinLength,
@@ -197,7 +196,7 @@ public class AuthenticatorGetInfo
     ///     List of supported algorithms for credential generation, as specified in <a href="https://www.w3.org/TR/webauthn-3/#dictionary-credential-params">WebAuthn</a>. The array is ordered from most preferred to least preferred and MUST NOT include duplicate entries nor be empty if
     ///     present. PublicKeyCredentialParameters' algorithm identifiers are values that SHOULD be registered in the <a href="https://www.iana.org/assignments/cose/cose.xhtml#algorithms">IANA COSE Algorithms registry</a>.
     /// </summary>
-    public PublicKeyCredentialParameters[]? Algorithms { get; }
+    public FidoPublicKeyCredentialParameters[]? Algorithms { get; }
 
     /// <summary>
     ///     The maximum size, in bytes, of the <a href="https://fidoalliance.org/specs/fido-v2.2-ps-20250714/fido-client-to-authenticator-protocol-v2.2-ps-20250714.html#serialized-large-blob-array">serialized large-blob array</a> that this authenticator can store. If the

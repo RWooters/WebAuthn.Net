@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using WebAuthn.Net.Models;
-using WebAuthn.Net.Models.Protocol.Enums;
-using WebAuthn.Net.Models.Protocol.RegistrationCeremony.CreateOptions;
 using WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder;
 using WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder.Enums;
 using WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataProvider.Protocol.Json;
-using WebAuthn.Net.Services.Serialization.Cose.Models.Enums;
 using WebAuthn.Net.Services.Serialization.Json;
 using WebAuthn.Net.Services.Static;
 using Version = WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder.Version;
@@ -835,23 +832,23 @@ public class DefaultFidoMetadataDecoder : IFidoMetadataDecoder
             return false;
         }
 
-        PublicKeyCredentialParameters[]? algorithms = null;
+        FidoPublicKeyCredentialParameters[]? algorithms = null;
         if (authenticatorGetInfo.Algorithms?.Length > 0)
         {
-            var resultAccumulator = new List<PublicKeyCredentialParameters>(authenticatorGetInfo.Algorithms.Length);
+            var resultAccumulator = new List<FidoPublicKeyCredentialParameters>(authenticatorGetInfo.Algorithms.Length);
             foreach (var algorithm in authenticatorGetInfo.Algorithms)
             {
+                // https://www.w3.org/TR/webauthn-3/#enum-credentialType
+                // enum PublicKeyCredentialType {
+                //     "public-key"
+                // };
                 if (algorithm.Type != "public-key")
                 {
                     result = null;
                     return false;
                 }
 
-                var alg = (CoseAlgorithm) algorithm.Alg;
-                if (Enum.IsDefined(alg))
-                {
-                    resultAccumulator.Add(new(PublicKeyCredentialType.PublicKey, alg));
-                }
+                resultAccumulator.Add(new(algorithm.Type, algorithm.Alg));
             }
 
             if (resultAccumulator.Count > 0)

@@ -29,7 +29,7 @@ public class PublicKeyCredentialParametersJSON
     ///     <a href="https://www.w3.org/TR/webauthn-3/#dom-publickeycredentialparameters-type">type</a>.
     /// </param>
     /// <param name="alg">This member specifies the cryptographic signature algorithm with which the newly generated credential will be used, and thus also the type of asymmetric key pair to be generated, e.g., RSA or Elliptic Curve.</param>
-    public PublicKeyCredentialParametersJSON(string type, long alg)
+    public PublicKeyCredentialParametersJSON(string type, int alg)
     {
         Type = type;
         Alg = alg;
@@ -57,5 +57,5 @@ public class PublicKeyCredentialParametersJSON
     [Required]
     [JsonPropertyName("alg")]
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
-    public long Alg { get; }
+    public int Alg { get; }
 }
