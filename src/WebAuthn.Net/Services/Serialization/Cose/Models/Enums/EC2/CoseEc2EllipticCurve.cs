@@ -5,7 +5,7 @@
 /// </summary>
 /// <remarks>
 ///     <para>
-///         <a href="https://www.rfc-editor.org/rfc/rfc9053.html#section-2.1">RFC9053 CBOR Object Signing and Encryption (COSE): Initial Algorithms - §2.1. ECDSA</a>
+///         <a href="https://www.rfc-editor.org/rfc/rfc9053.html#section-2.1">RFC9053 CBOR Object Signing and Encryption (COSE): Initial Algorithms - Section 2.1. ECDSA</a>
 ///     </para>
 ///     <para>
 ///         This document defines ECDSA as working only with the curves P-256, P-384, and P-521.
