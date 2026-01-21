@@ -7,9 +7,7 @@ namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataProvider.Protoco
 ///     RGB Palette Entry
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.0-ps-20210518.html#rgbpaletteentry-dictionary">FIDO Metadata Statement - §3.7. rgbPaletteEntry dictionary</a>
-///     </para>
+///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-type-rgbpe">FIDO Metadata Statement - rgbPaletteEntry dictionary</a>
 /// </remarks>
 // ReSharper disable once InconsistentNaming
 public class RgbPaletteEntryJSON
