@@ -40,7 +40,7 @@ public class MetadataBLOBPayloadEntryJSON
     ///         </list>
     ///     </para>
     /// </param>
-    /// <param name="metadataStatement">The metadataStatement JSON object as defined in <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.0-ps-20210518.html#metadata-keys">[FIDOMetadataStatement]</a>.</param>
+    /// <param name="metadataStatement">The metadataStatement JSON object as defined in <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-md-keys">[FIDOMetadataStatement]</a>.</param>
     /// <param name="biometricStatusReports">
     ///     Status of the FIDO Biometric Certification of one or more biometric components of the Authenticator <a href="https://fidoalliance.org/specs/biometric/requirements/Biometrics-Requirements-v2.0-fd-20201006.html">[FIDOBiometricsRequirements]</a>
     /// </param>
@@ -125,7 +125,7 @@ public class MetadataBLOBPayloadEntryJSON
     public string[]? AttestationCertificateKeyIdentifiers { get; }
 
     /// <summary>
-    ///     The metadataStatement JSON object as defined in <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.0-ps-20210518.html#metadata-keys">[FIDOMetadataStatement]</a>.
+    ///     The metadataStatement JSON object as defined in <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-md-keys">[FIDOMetadataStatement]</a>.
     /// </summary>
     [JsonPropertyName("metadataStatement")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

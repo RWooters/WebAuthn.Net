@@ -27,7 +27,7 @@ public class MetadataBlobPayloadEntry
     ///     </para>
     ///     <para>This field MUST be set if neither aaid nor aaguid are set. Setting this field implies that the attestation certificate(s) are dedicated to a single authenticator model.</para>
     /// </param>
-    /// <param name="metadataStatement">The metadataStatement object as defined in <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.0-ps-20210518.html#metadata-keys">[FIDOMetadataStatement]</a>.</param>
+    /// <param name="metadataStatement">The metadataStatement object as defined in <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-md-keys">[FIDOMetadataStatement]</a>.</param>
     /// <param name="biometricStatusReports">
     ///     Status of the FIDO Biometric Certification of one or more biometric components of the Authenticator <a href="https://fidoalliance.org/specs/biometric/requirements/Biometrics-Requirements-v2.0-fd-20201006.html">[FIDOBiometricsRequirements]</a>
     ///     .
@@ -107,7 +107,7 @@ public class MetadataBlobPayloadEntry
     public byte[][]? AttestationCertificateKeyIdentifiers { get; }
 
     /// <summary>
-    ///     The metadataStatement object as defined in <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.0-ps-20210518.html#metadata-keys">[FIDOMetadataStatement]</a>.
+    ///     The metadataStatement object as defined in <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-md-keys">[FIDOMetadataStatement]</a>.
     /// </summary>
     public MetadataStatement? MetadataStatement { get; }
 
