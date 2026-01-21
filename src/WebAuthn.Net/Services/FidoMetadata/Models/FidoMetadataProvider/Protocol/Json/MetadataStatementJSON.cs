@@ -44,7 +44,7 @@ public class MetadataStatementJSON
     /// <param name="authenticatorVersion">
     ///     <para>Earliest (i.e. lowest) trustworthy authenticatorVersion meeting the requirements specified in this metadata statement.</para>
     ///     <para>
-    ///         Adding new StatusReport entries with status UPDATE_AVAILABLE to the metadata BLOB object <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.0-ps-20210518.html">[FIDOMetadataService]</a> MUST also change this authenticatorVersion if the update fixes
+    ///         Adding new StatusReport entries with status UPDATE_AVAILABLE to the metadata BLOB object <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.1-ps-20250521.html">[FIDOMetadataService]</a> MUST also change this authenticatorVersion if the update fixes
     ///         severe security issues, e.g. the ones reported by preceding StatusReport entries with status code USER_VERIFICATION_BYPASS,ATTESTATION_KEY_COMPROMISE,USER_KEY_REMOTE_COMPROMISE,USER_KEY_PHYSICAL_COMPROMISE,REVOKED.
     ///     </para>
     ///     <para>
@@ -447,7 +447,7 @@ public class MetadataStatementJSON
     /// <summary>
     ///     <para>Earliest (i.e. lowest) trustworthy authenticatorVersion meeting the requirements specified in this metadata statement.</para>
     ///     <para>
-    ///         Adding new StatusReport entries with status UPDATE_AVAILABLE to the metadata BLOB object <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.0-ps-20210518.html">[FIDOMetadataService]</a> MUST also change this authenticatorVersion if the update fixes
+    ///         Adding new StatusReport entries with status UPDATE_AVAILABLE to the metadata BLOB object <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.1-ps-20250521.html">[FIDOMetadataService]</a> MUST also change this authenticatorVersion if the update fixes
     ///         severe security issues, e.g. the ones reported by preceding StatusReport entries with status code USER_VERIFICATION_BYPASS,ATTESTATION_KEY_COMPROMISE,USER_KEY_REMOTE_COMPROMISE,USER_KEY_PHYSICAL_COMPROMISE,REVOKED.
     ///     </para>
     ///     <para>
