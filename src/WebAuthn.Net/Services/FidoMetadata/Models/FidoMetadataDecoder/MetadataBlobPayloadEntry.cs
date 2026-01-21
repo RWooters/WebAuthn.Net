@@ -39,7 +39,7 @@ public class MetadataBlobPayloadEntry
     ///     <para>base64url(string[1..512])</para>
     ///     <para>
     ///         The hash value computed over the Base64url encoding of the UTF-8 representation of the JSON encoded rogueList available at rogueListURL (with type rogueListEntry[]). The hash algorithm related to the signature algorithm specified in the JWTHeader (see
-    ///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.0-ps-20210518.html#metadata-blob">Metadata BLOB</a>) MUST be used.
+    ///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.1-ps-20250521.html#sctn-mds-blob">Metadata BLOB</a>) MUST be used.
     ///     </para>
     ///     <para>This hash value MUST be present and non-empty whenever rogueListURL is present.</para>
     /// </param>
@@ -135,7 +135,7 @@ public class MetadataBlobPayloadEntry
     ///     <para>base64url(string[1..512])</para>
     ///     <para>
     ///         The hash value computed over the Base64url encoding of the UTF-8 representation of the JSON encoded rogueList available at rogueListURL (with type rogueListEntry[]). The hash algorithm related to the signature algorithm specified in the JWTHeader (see
-    ///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.0-ps-20210518.html#metadata-blob">Metadata BLOB</a>) MUST be used.
+    ///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.1-ps-20250521.html#sctn-mds-blob">Metadata BLOB</a>) MUST be used.
     ///     </para>
     ///     <para>This hash value MUST be present and non-empty whenever rogueListURL is present.</para>
     /// </summary>
