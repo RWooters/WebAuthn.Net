@@ -4,12 +4,10 @@ using WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder.Enums;
 namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder;
 
 /// <summary>
-///     StatusReport dictionary
+///     Status Report
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.0-ps-20210518.html#statusreport-dictionary">FIDO Metadata Service - §3.1.3. StatusReport dictionary</a>
-///     </para>
+///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.1-ps-20250521.html#sctn-stat-rep">FIDO Metadata Service - StatusReport dictionary</a>
 /// </remarks>
 public class StatusReport
 {
