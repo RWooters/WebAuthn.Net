@@ -27,6 +27,7 @@ using WebAuthn.Net.Services.Common.AttestationTrustPathValidator.Implementation;
 using WebAuthn.Net.Services.Common.AuthenticatorDataDecoder.Implementation;
 using WebAuthn.Net.Services.Common.ChallengeGenerator.Implementation;
 using WebAuthn.Net.Services.Common.ClientDataDecoder.Implementation;
+using WebAuthn.Net.Services.Common.ClientDataDecoder.Models.Enums;
 using WebAuthn.Net.Services.Cryptography.Sign.Implementation;
 using WebAuthn.Net.Services.FidoMetadata.Implementation.FidoMetadataDecoder;
 using WebAuthn.Net.Services.FidoMetadata.Implementation.FidoMetadataIngestService;
@@ -95,6 +96,7 @@ public abstract class AbstractRegistrationCeremonyServiceTests
             new DefaultEnumMemberAttributeSerializer<PublicKeyCredentialType>());
         var clientDataDecoder = new DefaultClientDataDecoder(
             safeJsonDeserializer,
+            new DefaultEnumMemberAttributeSerializer<TokenBindingStatus>(),
             NullLogger<DefaultClientDataDecoder>.Instance);
         var attestationObjectDecoder = new DefaultAttestationObjectDecoder(
             cborDeserializer,

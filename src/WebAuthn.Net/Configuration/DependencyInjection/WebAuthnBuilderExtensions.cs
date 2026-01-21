@@ -41,6 +41,7 @@ using WebAuthn.Net.Services.Common.ChallengeGenerator;
 using WebAuthn.Net.Services.Common.ChallengeGenerator.Implementation;
 using WebAuthn.Net.Services.Common.ClientDataDecoder;
 using WebAuthn.Net.Services.Common.ClientDataDecoder.Implementation;
+using WebAuthn.Net.Services.Common.ClientDataDecoder.Models.Enums;
 using WebAuthn.Net.Services.Context;
 using WebAuthn.Net.Services.Cryptography.Sign;
 using WebAuthn.Net.Services.Cryptography.Sign.Implementation;
@@ -353,6 +354,7 @@ public static class WebAuthnBuilderExtensions
         builder.Services.TryAddSingleton<IEnumMemberAttributeSerializer<PublicKeyCredentialHints>, DefaultEnumMemberAttributeSerializer<PublicKeyCredentialHints>>();
         builder.Services.TryAddSingleton<IEnumMemberAttributeSerializer<AttestationConveyancePreference>, DefaultEnumMemberAttributeSerializer<AttestationConveyancePreference>>();
         builder.Services.TryAddSingleton<IEnumMemberAttributeSerializer<ResidentKeyRequirement>, DefaultEnumMemberAttributeSerializer<ResidentKeyRequirement>>();
+        builder.Services.TryAddSingleton<IEnumMemberAttributeSerializer<TokenBindingStatus>, DefaultEnumMemberAttributeSerializer<TokenBindingStatus>>();
         return builder;
     }
 

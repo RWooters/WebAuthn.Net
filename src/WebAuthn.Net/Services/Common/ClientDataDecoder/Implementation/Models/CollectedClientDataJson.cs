@@ -32,19 +32,25 @@ public class CollectedClientDataJson
     ///     <a href="https://www.rfc-editor.org/rfc/rfc6454.html">[RFC6454]</a>. It is set only if the call was made from context that is not <a href="https://www.w3.org/TR/credential-management-1/#same-origin-with-its-ancestors">same-origin with its ancestors</a>, i.e. if
     ///     <a href="https://www.w3.org/TR/webauthn-3/#dom-collectedclientdata-crossorigin">crossOrigin</a> is <see langword="true" />.
     /// </param>
+    /// <param name="tokenBinding">
+    ///     This OPTIONAL member contains information about the state of the <a href="https://datatracker.ietf.org/doc/html/rfc8471#section-1">Token Binding</a> protocol used when communicating with the
+    ///     <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Party</a>. Its absence indicates that the client doesn’t support token binding.
+    /// </param>
     [JsonConstructor]
     public CollectedClientDataJson(
         string type,
         string challenge,
         string origin,
         bool? crossOrigin,
-        string? topOrigin)
+        string? topOrigin,
+        TokenBindingJson? tokenBinding)
     {
         Type = type;
         Challenge = challenge;
         Origin = origin;
         CrossOrigin = crossOrigin;
         TopOrigin = topOrigin;
+        TokenBinding = tokenBinding;
     }
 
     /// <summary>
@@ -89,4 +95,15 @@ public class CollectedClientDataJson
     [JsonPropertyName("topOrigin")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public string? TopOrigin { get; }
+
+    /// <summary>
+    ///     This OPTIONAL member contains information about the state of the <a href="https://datatracker.ietf.org/doc/html/rfc8471#section-1">Token Binding</a> protocol used when communicating with the <a href="https://www.w3.org/TR/webauthn-3/#relying-party">Relying Party</a>. Its
+    ///     absence indicates that the client doesn’t support token binding.
+    /// </summary>
+    /// <remarks>
+    ///     While Token Binding was present in Level 1 and Level 2 of WebAuthn, its use is not expected in Level 3. The "tokenBinding" field is reserved so that it will not be reused for a different purpose.
+    /// </remarks>
+    [JsonPropertyName("tokenBinding")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public TokenBindingJson? TokenBinding { get; }
 }
