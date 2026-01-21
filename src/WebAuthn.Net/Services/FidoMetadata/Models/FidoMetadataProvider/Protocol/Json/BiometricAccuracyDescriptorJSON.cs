@@ -4,12 +4,10 @@ using System.Text.Json.Serialization;
 namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataProvider.Protocol.Json;
 
 /// <summary>
-///     Biometric Accuracy Descriptor
+///     BiometricAccuracyDescriptor dictionary
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.0-ps-20210518.html#biometricaccuracydescriptor-dictionary">FIDO Metadata Statement - §3.3. BiometricAccuracyDescriptor dictionary</a>
-///     </para>
+///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-type-bad">FIDO Metadata Statement - BiometricAccuracyDescriptor dictionary</a>
 /// </remarks>
 // ReSharper disable once InconsistentNaming
 public class BiometricAccuracyDescriptorJSON

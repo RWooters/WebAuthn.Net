@@ -9,9 +9,7 @@ namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataProvider.Protoco
 ///     authenticatorGetInfo
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html#authenticatorGetInfo">Client to Authenticator Protocol (CTAP) - §5.4. authenticatorGetInfo (0x04)</a>
-///     </para>
+///     <a href="https://fidoalliance.org/specs/fido-v2.2-ps-20250714/fido-client-to-authenticator-protocol-v2.2-ps-20250714.html#authenticatorGetInfo">Client to Authenticator Protocol (CTAP) - authenticatorGetInfo (0x04)</a>
 /// </remarks>
 // ReSharper disable once InconsistentNaming
 [SuppressMessage("ReSharper", "InconsistentNaming")]
