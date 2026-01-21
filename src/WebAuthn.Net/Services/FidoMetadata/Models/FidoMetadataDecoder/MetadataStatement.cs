@@ -34,6 +34,7 @@ public class MetadataStatement
     ///     </para>
     ///     <para>All attestationCertificateKeyIdentifier values should be unique within the scope of the Metadata Service.</para>
     /// </param>
+    /// <param name="friendlyNames">A human-readable friendly name of the authenticator / passkey provider in multiple languages. The name is intended to be shown to end users. A name in English language ("en-US") is mandatory, localized names for other languages are optional.</param>
     /// <param name="description">
     ///     <para>A human-readable, short description of the authenticator, in English.</para>
     ///     <para>This description MUST be in English, and only contain ASCII <a href="https://tc39.es/ecma262/">[ECMA-262]</a> characters.</para>
@@ -51,7 +52,7 @@ public class MetadataStatement
     ///         entry, than any firmware version lower (older) than the one specified in the metadata statement is assumed to be vulnerable.
     ///     </para>
     ///     <para>
-    ///         The specified version should equal the value of the 'firmwareVersion' member of the authenticatorGetInfo response. If present, see <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html">[FIDOCTAP]</a>.
+    ///         The specified version should equal the value of the 'firmwareVersion' member of the authenticatorGetInfo response. If present, see <a href="https://fidoalliance.org/specs/fido-v2.2-ps-20250714/fido-client-to-authenticator-protocol-v2.2-ps-20250714.html">[FIDOCTAP]</a>.
     ///     </para>
     /// </param>
     /// <param name="protocolFamily">
@@ -246,12 +247,51 @@ public class MetadataStatement
     ///     A list of trust anchors used for ECDAA attestation. This entry MUST be present if and only if attestationType includes ATTESTATION_ECDAA. The entries in attestationRootCertificates have no relevance for ECDAA attestation. Each ecdaaTrustAnchor
     ///     MUST be dedicated to a single authenticator model (e.g as identified by its AAID/AAGUID).
     /// </param>
-    /// <param name="icon">A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://www.w3.org/TR/png/">[PNG]</a> icon for the Authenticator.</param>
+    /// <param name="icon">
+    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://w3c.github.io/png/">[PNG]</a> or <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> (light mode) icon for the Authenticator (e.g., depicting the security
+    ///     key). This icon is intended to be shown to users by RPs. Use of <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> format is mandatory if any of the "iconDark", "providerLogoLight" and/or "providerLogoDark" is used in addition to "icon". Use of
+    ///     <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> is recommended if only "icon" is used. The icon is more specific than the provider logo and should be shown if present.
+    /// </param>
+    /// <param name="iconDark">
+    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> dark mode icon for the Authenticator (e.g., depicting the security key). This icon is intended to be shown to users
+    ///     by RPs. The icon is more specific than the provider logo and should be shown if present.
+    /// </param>
+    /// <param name="providerLogoLight">
+    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> light mode icon for the provider (e.g., logomark of the passkey provider). The SVG MUST meet all of the requirements defined in
+    ///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-svg-requirements">"SVG requirements"</a>. This icon is intended to be shown to users by RPs.
+    /// </param>
+    /// <param name="providerLogoDark">
+    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> dark mode icon for the provider (e.g., logomark of the passkey provider). The SVG MUST meet all of the requirements defined in
+    ///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-svg-requirements">"SVG requirements"</a>. This icon is intended to be shown to users by RPs.
+    /// </param>
     /// <param name="supportedExtensions">List of extensions supported by the authenticator.</param>
+    /// <param name="keyScope">
+    ///     <para>Scope of keys generated and maintained by this authenticator model. When this field is absent or set to "public-key-credential-source", this authenticator only generates and maintains "main" FIDO credentials (and not supplemental public keys).</para>
+    ///     <para>When set to "device-spk", this authenticator only generates and maintains device-scoped supplemental public keys that are included in the supplemental public keys (SPK) extension.</para>
+    ///     <para>When set to "provider-spk", this authenticator only generates and maintains provider-scoped supplemental public keys that are included in the supplemental public keys (SPK) extension.</para>
+    ///     <para>Seeing keys generated and maintained by this authenticator model in an unexpected location (main credential, supplemental public keys extension confusion) is an indication of malicious authenticator behavior and should be rejected.</para>
+    /// </param>
+    /// <param name="multiDeviceCredentialSupport">
+    ///     <para>
+    ///         When set to "unsupported" it means that all private keys relating to the <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential-source">Public Key Credential Source [WebAuthn]</a> are designed to stay within the authenticator boundary. Consequently, the
+    ///         security characteristics of this Metadata Statement apply to all keys.
+    ///     </para>
+    ///     <para>When set to "explicit" it means that the authenticator explicitly marks keys as either multi-device keys or single-device keys via the <a href="https://www.w3.org/TR/webauthn-3/#backup-eligibility">"Backup Eligibility" flag [WebAuthn]</a>.</para>
+    ///     <para>When set to "implicit" it means that all private keys relating to <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential-source">Public Key Credential Source [WebAuthn]</a> may be backed up.</para>
+    ///     <para>The field "authenticatorGetInfo" / "supportedExtensions" will include the "supplementalPubKeys" extension if the authenticator supports it in general.</para>
+    ///     <para>If this "multiDeviceCredentialSupport" field is missing the implicit value is "unsupported" (to provide backwards compatibility).</para>
+    /// </param>
     /// <param name="authenticatorGetInfo">
     ///     <para>Describes supported versions, extensions, AAGUID of the device and its capabilities.</para>
     ///     <para>
-    ///         The information is the same reported by an authenticator when invoking the 'authenticatorGetInfo' method, see <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html">[FIDOCTAP]</a>.
+    ///         The information is the same reported by an authenticator when invoking the 'authenticatorGetInfo' method, see <a href="https://fidoalliance.org/specs/fido-v2.2-ps-20250714/fido-client-to-authenticator-protocol-v2.2-ps-20250714.html#authenticatorGetInfo">[FIDOCTAP]</a>.
+    ///     </para>
+    /// </param>
+    /// <param name="cxpConfigUrl">
+    ///     <para>Specifies the URL for retrieving the configuration details for the credential export protocol (CXP).</para>
+    ///     <para>
+    ///         When importing credentials, the passkey provider to export the credential might retrieve the configuration details for the credential export protocol in order to provide additional security. More details can be found in Credential Export Protocol specification that can
+    ///         be found on the FIDO <a href="https://fidoalliance.org/specifications-credential-exchange-specifications/">Credential Exchange Specifications</a> web page.
     ///     </para>
     /// </param>
     public MetadataStatement(
@@ -259,6 +299,7 @@ public class MetadataStatement
         string? aaid,
         Guid? aaguid,
         byte[][]? attestationCertificateKeyIdentifiers,
+        Dictionary<string, string>? friendlyNames,
         string description,
         Dictionary<string, string>? alternativeDescriptions,
         ulong authenticatorVersion,
@@ -281,13 +322,20 @@ public class MetadataStatement
         byte[][] attestationRootCertificates,
         EcdaaTrustAnchor[]? ecdaaTrustAnchors,
         string? icon,
+        string? iconDark,
+        string? providerLogoLight,
+        string? providerLogoDark,
         ExtensionDescriptor[]? supportedExtensions,
-        AuthenticatorGetInfo? authenticatorGetInfo)
+        string? keyScope,
+        string? multiDeviceCredentialSupport,
+        AuthenticatorGetInfo? authenticatorGetInfo,
+        string? cxpConfigUrl)
     {
         LegalHeader = legalHeader;
         Aaid = aaid;
         Aaguid = aaguid;
         AttestationCertificateKeyIdentifiers = attestationCertificateKeyIdentifiers;
+        FriendlyNames = friendlyNames;
         Description = description;
         AlternativeDescriptions = alternativeDescriptions;
         AuthenticatorVersion = authenticatorVersion;
@@ -310,8 +358,14 @@ public class MetadataStatement
         AttestationRootCertificates = attestationRootCertificates;
         EcdaaTrustAnchors = ecdaaTrustAnchors;
         Icon = icon;
+        IconDark = iconDark;
+        ProviderLogoLight = providerLogoLight;
+        ProviderLogoDark = providerLogoDark;
         SupportedExtensions = supportedExtensions;
+        KeyScope = keyScope;
+        MultiDeviceCredentialSupport = multiDeviceCredentialSupport;
         AuthenticatorGetInfo = authenticatorGetInfo;
+        CxpConfigUrl = cxpConfigUrl;
     }
 
     /// <summary>
@@ -353,6 +407,11 @@ public class MetadataStatement
     public byte[][]? AttestationCertificateKeyIdentifiers { get; }
 
     /// <summary>
+    ///     A human-readable friendly name of the authenticator / passkey provider in multiple languages. The name is intended to be shown to end users. A name in English language ("en-US") is mandatory, localized names for other languages are optional.
+    /// </summary>
+    public Dictionary<string, string>? FriendlyNames { get; }
+
+    /// <summary>
     ///     <para>A human-readable, short description of the authenticator, in English.</para>
     ///     <para>This description MUST be in English, and only contain ASCII <a href="https://tc39.es/ecma262/">[ECMA-262]</a> characters.</para>
     ///     <para>This description SHALL NOT exceed a maximum length of 200 characters.</para>
@@ -379,7 +438,7 @@ public class MetadataStatement
     ///         entry, than any firmware version lower (older) than the one specified in the metadata statement is assumed to be vulnerable.
     ///     </para>
     ///     <para>
-    ///         The specified version should equal the value of the 'firmwareVersion' member of the authenticatorGetInfo response. If present, see <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html">[FIDOCTAP]</a>.
+    ///         The specified version should equal the value of the 'firmwareVersion' member of the authenticatorGetInfo response. If present, see <a href="https://fidoalliance.org/specs/fido-v2.2-ps-20250714/fido-client-to-authenticator-protocol-v2.2-ps-20250714.html">[FIDOCTAP]</a>.
     ///     </para>
     /// </summary>
     public ulong AuthenticatorVersion { get; }
@@ -560,7 +619,7 @@ public class MetadataStatement
     /// </summary>
     /// <remarks>
     ///     <para>
-    ///         FIDO2 "Security Keys" will typically support "none", or "presence_internal", or "passcode_external" <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html">[FIDOCTAP]</a>
+    ///         FIDO2 "Security Keys" will typically support "none", or "presence_internal", or "passcode_external" <a href="https://fidoalliance.org/specs/fido-v2.2-ps-20250714/fido-client-to-authenticator-protocol-v2.2-ps-20250714.html">[FIDOCTAP]</a>
     ///     </para>
     ///     <para>The FIDO Client will typically prevent "none" (silent authentication) and "passcode_external" (without "presence_internal") from being used in practice</para>
     /// </remarks>
@@ -637,7 +696,7 @@ public class MetadataStatement
     ///     <para>For FIDO2 the values of attachmentHint MUST correspond to the authenticatorGetInfo.transports if present.</para>
     ///     <para>
     ///         See the field authenticatorGetInfo for FIDO2 authenticators; which expose similar information in the 'transports' member when invoking the 'authenticatorGetInfo' method. See
-    ///         <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html">[FIDOCTAP]</a>
+    ///         <a href="https://fidoalliance.org/specs/fido-v2.2-ps-20250714/fido-client-to-authenticator-protocol-v2.2-ps-20250714.html">[FIDOCTAP]</a>
     ///     </para>
     /// </remarks>
     public AuthenticatorAttachmentHint[]? AttachmentHint { get; }
@@ -712,9 +771,29 @@ public class MetadataStatement
     public EcdaaTrustAnchor[]? EcdaaTrustAnchors { get; }
 
     /// <summary>
-    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://www.w3.org/TR/png/">[PNG]</a> icon for the Authenticator.
+    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://w3c.github.io/png/">[PNG]</a> or <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> (light mode) icon for the Authenticator (e.g., depicting the security key). This icon
+    ///     is intended to be shown to users by RPs. Use of <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> format is mandatory if any of the "iconDark", "providerLogoLight" and/or "providerLogoDark" is used in addition to "icon". Use of
+    ///     <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> is recommended if only "icon" is used. The icon is more specific than the provider logo and should be shown if present.
     /// </summary>
     public string? Icon { get; }
+
+    /// <summary>
+    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> dark mode icon for the Authenticator (e.g., depicting the security key). This icon is intended to be shown to users by RPs. The icon is
+    ///     more specific than the provider logo and should be shown if present.
+    /// </summary>
+    public string? IconDark { get; }
+
+    /// <summary>
+    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> light mode icon for the provider (e.g., logomark of the passkey provider). The SVG MUST meet all of the requirements defined in
+    ///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-svg-requirements">"SVG requirements"</a>. This icon is intended to be shown to users by RPs.
+    /// </summary>
+    public string? ProviderLogoLight { get; }
+
+    /// <summary>
+    ///     A data: url <a href="https://www.rfc-editor.org/rfc/rfc2397.html">[RFC2397]</a> encoded <a href="https://www.w3.org/TR/SVG11/">[SVG11]</a> dark mode icon for the provider (e.g., logomark of the passkey provider). The SVG MUST meet all of the requirements defined in
+    ///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-svg-requirements">"SVG requirements"</a>. This icon is intended to be shown to users by RPs.
+    /// </summary>
+    public string? ProviderLogoDark { get; }
 
     /// <summary>
     ///     List of extensions supported by the authenticator.
@@ -726,9 +805,29 @@ public class MetadataStatement
     public ExtensionDescriptor[]? SupportedExtensions { get; }
 
     /// <summary>
+    ///     <para>Scope of keys generated and maintained by this authenticator model. When this field is absent or set to "public-key-credential-source", this authenticator only generates and maintains "main" FIDO credentials (and not supplemental public keys).</para>
+    ///     <para>When set to "device-spk", this authenticator only generates and maintains device-scoped supplemental public keys that are included in the supplemental public keys (SPK) extension.</para>
+    ///     <para>When set to "provider-spk", this authenticator only generates and maintains provider-scoped supplemental public keys that are included in the supplemental public keys (SPK) extension.</para>
+    ///     <para>Seeing keys generated and maintained by this authenticator model in an unexpected location (main credential, supplemental public keys extension confusion) is an indication of malicious authenticator behavior and should be rejected.</para>
+    /// </summary>
+    public string? KeyScope { get; }
+
+    /// <summary>
+    ///     <para>
+    ///         When set to "unsupported" it means that all private keys relating to the <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential-source">Public Key Credential Source [WebAuthn]</a> are designed to stay within the authenticator boundary. Consequently, the
+    ///         security characteristics of this Metadata Statement apply to all keys.
+    ///     </para>
+    ///     <para>When set to "explicit" it means that the authenticator explicitly marks keys as either multi-device keys or single-device keys via the <a href="https://www.w3.org/TR/webauthn-3/#backup-eligibility">"Backup Eligibility" flag [WebAuthn]</a>.</para>
+    ///     <para>When set to "implicit" it means that all private keys relating to <a href="https://www.w3.org/TR/webauthn-3/#public-key-credential-source">Public Key Credential Source [WebAuthn]</a> may be backed up.</para>
+    ///     <para>The field "authenticatorGetInfo" / "supportedExtensions" will include the "supplementalPubKeys" extension if the authenticator supports it in general.</para>
+    ///     <para>If this "multiDeviceCredentialSupport" field is missing the implicit value is "unsupported" (to provide backwards compatibility).</para>
+    /// </summary>
+    public string? MultiDeviceCredentialSupport { get; }
+
+    /// <summary>
     ///     <para>Describes supported versions, extensions, AAGUID of the device and its capabilities.</para>
     ///     <para>
-    ///         The information is the same reported by an authenticator when invoking the 'authenticatorGetInfo' method, see <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html">[FIDOCTAP]</a>.
+    ///         The information is the same reported by an authenticator when invoking the 'authenticatorGetInfo' method, see <a href="https://fidoalliance.org/specs/fido-v2.2-ps-20250714/fido-client-to-authenticator-protocol-v2.2-ps-20250714.html#authenticatorGetInfo">[FIDOCTAP]</a>.
     ///     </para>
     /// </summary>
     /// <remarks>
@@ -736,4 +835,13 @@ public class MetadataStatement
     ///     <para>FIDO UAF and FIDO U2F authenticators do not support authenticatorGetInfo.</para>
     /// </remarks>
     public AuthenticatorGetInfo? AuthenticatorGetInfo { get; }
+
+    /// <summary>
+    ///     <para>Specifies the URL for retrieving the configuration details for the credential export protocol (CXP).</para>
+    ///     <para>
+    ///         When importing credentials, the passkey provider to export the credential might retrieve the configuration details for the credential export protocol in order to provide additional security. More details can be found in Credential Export Protocol specification that can
+    ///         be found on the FIDO <a href="https://fidoalliance.org/specifications-credential-exchange-specifications/">Credential Exchange Specifications</a> web page.
+    ///     </para>
+    /// </summary>
+    public string? CxpConfigUrl { get; }
 }

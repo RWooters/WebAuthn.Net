@@ -366,6 +366,7 @@ public class DefaultFidoMetadataDecoder : IFidoMetadataDecoder
             metadataStatement.Aaid,
             aaguid,
             attestationCertificateKeyIdentifiers,
+            metadataStatement.FriendlyNames,
             metadataStatement.Description,
             metadataStatement.AlternativeDescriptions,
             metadataStatement.AuthenticatorVersion,
@@ -388,8 +389,14 @@ public class DefaultFidoMetadataDecoder : IFidoMetadataDecoder
             attestationRootCertificates,
             ecdaaTrustAnchors,
             metadataStatement.Icon,
+            metadataStatement.IconDark,
+            metadataStatement.ProviderLogoLight,
+            metadataStatement.ProviderLogoDark,
             supportedExtensions,
-            authenticatorGetInfo);
+            metadataStatement.KeyScope,
+            metadataStatement.MultiDeviceCredentialSupport,
+            authenticatorGetInfo,
+            metadataStatement.CxpConfigUrl);
         return true;
     }
 
