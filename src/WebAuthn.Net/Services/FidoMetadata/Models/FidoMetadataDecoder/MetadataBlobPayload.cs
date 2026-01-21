@@ -6,9 +6,7 @@ namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder;
 ///     Metadata BLOB Payload dictionary
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.0-ps-20210518.html#metadata-blob-payload-dictionary">FIDO Metadata Service - §3.1.6. Metadata BLOB Payload dictionary</a>
-///     </para>
+///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.1-ps-20250521.html#sctn-mds-payload-blob">FIDO Metadata Service - Metadata BLOB Payload dictionary</a>
 /// </remarks>
 public class MetadataBlobPayload
 {

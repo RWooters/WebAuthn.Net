@@ -7,9 +7,7 @@ namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataProvider.Protoco
 ///     Metadata BLOB Payload Entry dictionary
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.0-ps-20210518.html#metadata-blob-payload-entry-dictionary">FIDO Metadata Service - §3.1.1. Metadata BLOB Payload Entry dictionary</a>
-///     </para>
+///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-service-v3.1-ps-20250521.html#sctn-mds-blob-pe">FIDO Metadata Service - Metadata BLOB Payload Entry dictionary</a>
 /// </remarks>
 // ReSharper disable once InconsistentNaming
 public class MetadataBLOBPayloadEntryJSON
