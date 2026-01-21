@@ -1,12 +1,10 @@
 ﻿namespace WebAuthn.Net.Services.FidoMetadata.Models.FidoMetadataDecoder;
 
 /// <summary>
-///     Code Accuracy Descriptor
+///     CodeAccuracyDescriptor dictionary
 /// </summary>
 /// <remarks>
-///     <para>
-///         <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.0-ps-20210518.html#codeaccuracydescriptor-dictionary">FIDO Metadata Statement - §3.2. CodeAccuracyDescriptor dictionary</a>
-///     </para>
+///     <a href="https://fidoalliance.org/specs/mds/fido-metadata-statement-v3.1-ps-20250521.html#sctn-type-cad">FIDO Metadata Statement - CodeAccuracyDescriptor dictionary</a>
 /// </remarks>
 public class CodeAccuracyDescriptor
 {
