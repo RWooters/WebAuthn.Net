@@ -4,23 +4,19 @@
         () => document.getElementById("allowed-algo-RS512"),
         () => document.getElementById("allowed-algo-RS384"),
         () => document.getElementById("allowed-algo-RS256"),
-
         () => document.getElementById("allowed-algo-PS512"),
         () => document.getElementById("allowed-algo-PS384"),
         () => document.getElementById("allowed-algo-PS256"),
-
         () => document.getElementById("allowed-algo-ES512"),
         () => document.getElementById("allowed-algo-ES384"),
         () => document.getElementById("allowed-algo-ES256"),
-
-        () => document.getElementById("allowed-algo-EdDSA"),
+        () => document.getElementById("allowed-algo-EDDSA"),
     ];
     const formElements = {
-        userVerification: () => document.getElementById("webauthn-params-uv"),
-        attachment: () => document.getElementById("webauthn-params-attachment"),
-        discoverableCredential: () => document.getElementById("webauthn-params-discoverable"),
-        attestation: () => document.getElementById("webauthn-params-attestation"),
-        residentKey: () => document.getElementById("webauthn-params-rkey")
+        authenticatorAttachment: () => document.getElementById("webauthn-params-authenticator-attachment"),
+        residentKey: () => document.getElementById("webauthn-params-resident-key"),
+        userVerification: () => document.getElementById("webauthn-params-user-verification"),
+        attestation: () => document.getElementById("webauthn-params-attestation")
     };
     const elements = {
         registerInput: () => document.getElementById("webauthn-register-name"),
@@ -29,11 +25,6 @@
         csrfElement: () => document.getElementById("webauthn-register-request-token")
     };
     const defaultParams = {
-        userVerification: "preferred",
-        attachment: "unset",
-        discoverableCredential: "unset",
-        attestation: "none",
-        residentKey: "unset",
         pubKeyCredParams: [
             -65535,
             -259,
@@ -44,9 +35,13 @@
             -37,
             -36,
             -35,
-            -8,
-            -7
+            -7,
+            -8
         ],
+        authenticatorAttachment: "unset",
+        residentKey: "unset",
+        userVerification: "preferred",
+        attestation: "none",
     };
     const {createRegistrationOptions, completeRegistration} = API.Register;
     const {

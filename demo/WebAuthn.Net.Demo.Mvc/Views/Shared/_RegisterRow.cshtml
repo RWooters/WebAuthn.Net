@@ -27,52 +27,7 @@
             <div class="card-body">
                 <h2 class="card-title">Register Options</h2>
                 <form id="webauthn-params" class="p-1">
-                    <div class="form-floating mb-2">
-                        <select id="webauthn-params-uv" class="form-select">
-                            <option value="unset">(not set)</option>
-                            <option value="discouraged">Discouraged</option>
-                            <option value="preferred">Preferred</option>
-                            <option value="required">Required</option>
-                        </select>
-                        <label for="webauthn-params-uv">User Verification Requirement</label>
-                    </div>
-                    <div class="form-floating mb-2">
-                        <select id="webauthn-params-attachment" class="form-select">
-                            <option value="unset">(not set)</option>
-                            <option value="platform">Platform</option>
-                            <option value="cross-platform">Cross-Platform</option>
-                        </select>
-                        <label for="webauthn-params-attachment">Authenticator Attachment</label>
-                    </div>
-                    <div class="form-floating mb-2">
-                        <select id="webauthn-params-discoverable" class="form-select">
-                            <option value="unset">(not set)</option>
-                            <option value="discouraged">Discouraged</option>
-                            <option value="preferred">Preferred</option>
-                            <option value="required">Required</option>
-                        </select>
-                        <label for="webauthn-params-discoverable">Discoverable Credential</label>
-                    </div>
-                    <div class="form-floating mb-2">
-                        <select id="webauthn-params-attestation" class="form-select">
-                            <option value="unset">(not set)</option>
-                            <option value="none">None</option>
-                            <option value="direct">Direct</option>
-                            <option value="indirect">Indirect</option>
-                            <option value="enterprise">Enterprise</option>
-                        </select>
-                        <label for="webauthn-params-attestation">Attestation Conveyance Preference</label>
-                    </div>
-                    <div class="form-floating mb-2">
-                        <select id="webauthn-params-rkey" class="form-select">
-                            <option value="unset">(not set)</option>
-                            <option value="discouraged">Discouraged</option>
-                            <option value="preferred">Preferred</option>
-                            <option value="required">Required</option>
-                        </select>
-                        <label for="webauthn-params-rkey">Resident Key Requirement</label>
-                    </div>
-                    <div class="accordion mb-3" id="allowed-algo">
+                    <div class="accordion mb-2" id="allowed-algo">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#allowed-algo-body">
@@ -132,13 +87,48 @@
                                     </div>
 
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" id="allowed-algo-EdDSA" value="-8">
-                                        <label class="form-check-label" for="allowed-algo-EdDSA">EdDSA</label>
+                                        <input class="form-check-input" type="checkbox" role="switch" id="allowed-algo-EDDSA" value="-8">
+                                        <label class="form-check-label" for="allowed-algo-EDDSA">EdDSA</label>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <select id="webauthn-params-authenticator-attachment" class="form-select">
+                            <option value="unset">(not set)</option>
+                            <option value="platform">Platform</option>
+                            <option value="cross-platform">Cross-Platform</option>
+                        </select>
+                        <label for="webauthn-params-authenticator-attachment">Authenticator Attachment</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <select id="webauthn-params-resident-key" class="form-select">
+                            <option value="unset">(not set)</option>
+                            <option value="discouraged">Discouraged</option>
+                            <option value="preferred">Preferred</option>
+                            <option value="required">Required</option>
+                        </select>
+                        <label for="webauthn-params-resident-key">Resident Key Requirement</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <select id="webauthn-params-user-verification" class="form-select">
+                            <option value="unset">(not set)</option>
+                            <option value="discouraged">Discouraged</option>
+                            <option value="preferred">Preferred</option>
+                            <option value="required">Required</option>
+                        </select>
+                        <label for="webauthn-params-user-verification">User Verification Requirement</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select id="webauthn-params-attestation" class="form-select">
+                            <option value="unset">(not set)</option>
+                            <option value="none">None</option>
+                            <option value="direct">Direct</option>
+                            <option value="indirect">Indirect</option>
+                            <option value="enterprise">Enterprise</option>
+                        </select>
+                        <label for="webauthn-params-attestation">Attestation Conveyance Preference</label>
                     </div>
                     <div class="d-grid gap-2 col-lg-6 col-sm-12 mx-auto">
                         <button type="submit" id="webauthn-params-submit" class="btn btn-secondary">Reset</button>

@@ -32,24 +32,14 @@
             <div class="card-body">
                 <h2 class="card-title">Passwordless Authentication Options</h2>
                 <form id="webauthn-passwordless-params" class="p-1">
-                    <div class="form-floating mb-2">
-                        <select id="webauthn-passwordless-params-uv" class="form-select">
+                    <div class="form-floating mb-3">
+                        <select id="webauthn-passwordless-params-user-verification" class="form-select">
                             <option value="unset">(not set)</option>
                             <option value="discouraged">Discouraged</option>
                             <option value="preferred">Preferred</option>
                             <option value="required">Required</option>
                         </select>
-                        <label for="webauthn-passwordless-params-uv">User Verification Requirement</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <select id="webauthn-passwordless-params-attestation" class="form-select">
-                            <option value="unset">(not set)</option>
-                            <option value="none">None</option>
-                            <option value="direct">Direct</option>
-                            <option value="indirect">Indirect</option>
-                            <option value="enterprise">Enterprise</option>
-                        </select>
-                        <label for="webauthn-passwordless-params-attestation">Attestation Conveyance Preference</label>
+                        <label for="webauthn-passwordless-params-user-verification">User Verification Requirement</label>
                     </div>
                     <div class="d-grid gap-2 col-lg-6 col-sm-12 mx-auto">
                         <button type="submit" id="webauthn-passwordless-params-submit" class="btn btn-secondary">Reset</button>

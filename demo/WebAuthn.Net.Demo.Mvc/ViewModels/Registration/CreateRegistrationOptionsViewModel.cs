@@ -13,8 +13,8 @@ namespace WebAuthn.Net.Demo.Mvc.ViewModels.Registration;
 [method: JsonConstructor]
 public class CreateRegistrationOptionsViewModel(
     string userName,
-    Dictionary<string, JsonElement>? extensions,
-    AuthenticatorParametersViewModel registrationParameters)
+    RegistrationParametersViewModel registrationParameters,
+    Dictionary<string, JsonElement>? extensions)
 {
     [JsonPropertyName("username")]
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
@@ -24,7 +24,7 @@ public class CreateRegistrationOptionsViewModel(
     [JsonPropertyName("registrationParameters")]
     [JsonIgnore(Condition = JsonIgnoreCondition.Never)]
     [Required]
-    public AuthenticatorParametersViewModel RegistrationParameters { get; } = registrationParameters;
+    public RegistrationParametersViewModel RegistrationParameters { get; } = registrationParameters;
 
     [JsonPropertyName("extensions")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -33,12 +33,12 @@ public class CreateRegistrationOptionsViewModel(
     public BeginRegistrationCeremonyRequest ToBeginCeremonyRequest(byte[] userHandle)
     {
         var criteria = new AuthenticatorSelectionCriteria(
-            RegistrationParameters.Attachment.RemapUnsetValue<AuthenticatorAttachment>(),
+            RegistrationParameters.AuthenticatorAttachment.RemapUnsetValue<AuthenticatorAttachment>(),
             RegistrationParameters.ResidentKey.RemapUnsetValue<ResidentKeyRequirement>(),
-            RegistrationParameters.ResidentKeyIsRequired,
+            RegistrationParameters.RequireResidentKey,
             RegistrationParameters.UserVerification.RemapUnsetValue<UserVerificationRequirement>()
         );
-        var coseAlgorithms = RegistrationParameters.CoseAlgorithms.Select(x => (CoseAlgorithm) x).ToArray();
+        var coseAlgorithms = RegistrationParameters.PubKeyCredParams.Select(x => (CoseAlgorithm) x).ToArray();
         return new(
             null,
             null,

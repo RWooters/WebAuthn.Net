@@ -179,12 +179,11 @@ const API = {
         },
     },
     Passwordless: {
-        createAuthenticationOptions: async ({username, userVerification, attestation, csrf}) => {
+        createAuthenticationOptions: async ({username, userVerification, csrf}) => {
             const url = "/passwordless/createauthenticationoptions";
             const data = {
                 username,
                 userVerification,
-                attestation,
                 extensions: {}
             };
             return await makeJsonApiCall({url, data, method: "POST", csrf});

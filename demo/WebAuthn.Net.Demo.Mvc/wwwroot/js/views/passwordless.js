@@ -1,7 +1,6 @@
 (() => {
     const formElements = {
-        userVerification: () => document.getElementById("webauthn-passwordless-params-uv"),
-        attestation: () => document.getElementById("webauthn-passwordless-params-attestation"),
+        userVerification: () => document.getElementById("webauthn-passwordless-params-user-verification"),
     };
     const elements = {
         authenticateInput: () => document.getElementById("webauthn-authenticate-name"),
@@ -10,8 +9,7 @@
         csrfElement: () => document.getElementById("webauthn-authenticate-request-token")
     };
     const defaultParams = {
-        userVerification: "preferred",
-        attestation: "none",
+        userVerification: "preferred"
     };
     const {createAuthenticationOptions, completeAuthentication} = API.Passwordless;
     const {
@@ -33,8 +31,8 @@
             return;
         }
 
-        const {userVerification, attestation} = getState();
-        const options = await createAuthenticationOptions({username, attestation, userVerification, csrf});
+        const {userVerification} = getState();
+        const options = await createAuthenticationOptions({username, userVerification, csrf});
         if (!options) return;
         const publicKey = {
             ...options,
